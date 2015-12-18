@@ -1,0 +1,448 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         25/Jan/2015  16:46:08 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\weikong\Source\guu_proto.c         #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wCoord.cfg" (-DCPU32MHZ              #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\weikong\Source\guu_proto.c" -D ZTOOL_P1 -D  #
+#                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D          #
+#                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D     #
+#                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D   #
+#                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D              #
+#                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                  #
+#                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D       #
+#                          xPOWER_SAVING -lC "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Coordinator\List\" -lA    #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\Coordinator\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Coordinator\Obj\" -e      #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\Source\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\ZMain\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\" -I "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\cc2531\" -I      #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\usb\class_cdc\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\high_level\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\" -I "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\single_chip\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 #
+#                          a\Projects\zstack\Samples\GenericApp\CC2531\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\saddr\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\sdata\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\af\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\nwk\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sapi\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sec\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sys\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\zdo\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2531\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\weikong\Source\"    #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Coordinator\List #
+#                          \guu_proto.lst                                     #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Coordinator\Obj\ #
+#                          guu_proto.r51                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\guu_proto.c
+      1          #include "ZComDef.h"
+      2          #include "hal_drivers.h"
+      3          #include "OSAL.h"
+      4          #include "OSAL_Tasks.h"
+      5          #include "OSAL_Nv.h"
+      6          
+      7          //#include "OSAL_Custom.h"
+      8          
+      9          #if defined ( MT_TASK )
+     10            #include "MT.h"
+     11            #include "MT_TASK.h"
+     12          #endif
+     13          #include <stdio.h>
+     14          #include <stdlib.h>
+     15          #include <string.h>
+     16          
+     17          
+     18          #include "nwk.h"
+     19          #include "APS.h"
+     20          #include "ZDApp.h"
+     21          
+     22          #include "osal_nv.h"
+     23          #include "NLMEDE.h"
+     24          #include "AF.h"
+     25          #include "OnBoard.h"
+     26          #include "nwk_util.h"
+     27          #include "ZDProfile.h"
+     28          #include "ZDObject.h"
+     29          #include "MT_UART.h"
+     30          
+     31          #include "hal_adc.h"
+     32          #include "hal_key.h"
+     33          
+     34          #include "guu_common_def.h"
+     35          #include "serial.h"
+     36          #include "crc.h"
+     37          
+     38          #include "base.h"
+     39          #include "GenericApp.h"
+     40          #include "guu_init.h"
+     41          #include "guu_proto.h"
+     42          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     43          uint8* guu_build_pack(uint8 cmdId, uint8 dataLen, uint8 *pData)
+   \                     guu_build_pack:
+     44          {
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 1,R1
+   \   000007   8A..         MOV     ?V0 + 0,R2
+   \   000009   8C..         MOV     ?V0 + 8,R4
+   \   00000B   8D..         MOV     ?V0 + 9,R5
+     45          	uint8 *msg_ptr;
+     46          	msg_ptr = osal_mem_alloc( (dataLen +11) * sizeof(uint8) );
+   \   00000D                ; Setup parameters for call to function osal_mem_alloc
+   \   00000D   EA           MOV     A,R2
+   \   00000E   240B         ADD     A,#0xb
+   \   000010   FA           MOV     R2,A
+   \   000011   E4           CLR     A
+   \   000012   3400         ADDC    A,#0x0
+   \   000014   FB           MOV     R3,A
+   \   000015   12....       LCALL   ??osal_mem_alloc?relay
+   \   000018   8A..         MOV     ?V0 + 2,R2
+   \   00001A   8B..         MOV     ?V0 + 3,R3
+   \   00001C   AE..         MOV     R6,?V0 + 2
+   \   00001E   AF..         MOV     R7,?V0 + 3
+     47          	if(msg_ptr !=NULL)
+   \   000020   EE           MOV     A,R6
+   \   000021   4F           ORL     A,R7
+   \   000022   607D         JZ      ??guu_build_pack_0
+     48          	{
+     49          	msg_ptr[0] = cmdId;
+   \   000024   8E82         MOV     DPL,R6
+   \   000026   8F83         MOV     DPH,R7
+   \   000028   E5..         MOV     A,?V0 + 1
+   \   00002A   F0           MOVX    @DPTR,A
+     50          	msg_ptr[1] = dataLen + 11;
+   \   00002B   740B         MOV     A,#0xb
+   \   00002D   25..         ADD     A,?V0 + 0
+   \   00002F   A3           INC     DPTR
+   \   000030   F0           MOVX    @DPTR,A
+     51          	osal_memcpy(&msg_ptr[2],guu_ieeeAddr,8); //每条信息包含了Mac地址
+   \   000031   EE           MOV     A,R6
+   \   000032   2402         ADD     A,#0x2
+   \   000034   F5..         MOV     ?V0 + 2,A
+   \   000036   EF           MOV     A,R7
+   \   000037   3400         ADDC    A,#0x0
+   \   000039   F5..         MOV     ?V0 + 3,A
+   \   00003B                ; Setup parameters for call to function osal_memcpy
+   \   00003B   90....       MOV     DPTR,#guu_ieeeAddr
+   \   00003E   E0           MOVX    A,@DPTR
+   \   00003F   F5..         MOV     ?V0 + 4,A
+   \   000041   A3           INC     DPTR
+   \   000042   E0           MOVX    A,@DPTR
+   \   000043   F5..         MOV     ?V0 + 5,A
+   \   000045   75..00       MOV     ?V0 + 6,#0x0
+   \   000048   78..         MOV     R0,#?V0 + 4
+   \   00004A   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00004D   7C08         MOV     R4,#0x8
+   \   00004F   7D00         MOV     R5,#0x0
+   \   000051   0A           INC     R2
+   \   000052   0A           INC     R2
+   \   000053   AB..         MOV     R3,?V0 + 3
+   \   000055   12....       LCALL   ??osal_memcpy?relay
+   \   000058   7403         MOV     A,#0x3
+   \   00005A   12....       LCALL   ?DEALLOC_XSTACK8
+     52          	osal_memcpy(&msg_ptr[10], pData,dataLen);
+   \   00005D                ; Setup parameters for call to function osal_memcpy
+   \   00005D   85....       MOV     ?V0 + 4,?V0 + 8
+   \   000060   85....       MOV     ?V0 + 5,?V0 + 9
+   \   000063   78..         MOV     R0,#?V0 + 4
+   \   000065   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000068   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00006B   AC..         MOV     R4,?V0 + 4
+   \   00006D   7D00         MOV     R5,#0x0
+   \   00006F   EE           MOV     A,R6
+   \   000070   240A         ADD     A,#0xa
+   \   000072   FA           MOV     R2,A
+   \   000073   EF           MOV     A,R7
+   \   000074   3400         ADDC    A,#0x0
+   \   000076   FB           MOV     R3,A
+   \   000077   12....       LCALL   ??osal_memcpy?relay
+   \   00007A   7403         MOV     A,#0x3
+   \   00007C   12....       LCALL   ?DEALLOC_XSTACK8
+     53          	msg_ptr[dataLen+10] = crc8(&msg_ptr[2],dataLen);
+   \   00007F                ; Setup parameters for call to function crc8
+   \   00007F   A9..         MOV     R1,?V0 + 0
+   \   000081   AA..         MOV     R2,?V0 + 2
+   \   000083   AB..         MOV     R3,?V0 + 3
+   \   000085   12....       LCALL   ??crc8?relay
+   \   000088   85....       MOV     ?V0 + 2,?V0 + 0
+   \   00008B   EE           MOV     A,R6
+   \   00008C   25..         ADD     A,?V0 + 2
+   \   00008E   F582         MOV     DPL,A
+   \   000090   EF           MOV     A,R7
+   \   000091   3400         ADDC    A,#0x0
+   \   000093   F583         MOV     DPH,A
+   \   000095   A3           INC     DPTR
+   \   000096   A3           INC     DPTR
+   \   000097   A3           INC     DPTR
+   \   000098   A3           INC     DPTR
+   \   000099   A3           INC     DPTR
+   \   00009A   A3           INC     DPTR
+   \   00009B   A3           INC     DPTR
+   \   00009C   A3           INC     DPTR
+   \   00009D   A3           INC     DPTR
+   \   00009E   A3           INC     DPTR
+   \   00009F   E9           MOV     A,R1
+   \   0000A0   F0           MOVX    @DPTR,A
+     54          	}
+     55          	return msg_ptr;
+   \                     ??guu_build_pack_0:
+   \   0000A1   EE           MOV     A,R6
+   \   0000A2   FA           MOV     R2,A
+   \   0000A3   EF           MOV     A,R7
+   \   0000A4   FB           MOV     R3,A
+   \   0000A5   7F0A         MOV     R7,#0xa
+   \   0000A7   02....       LJMP    ?BANKED_LEAVE_XDATA
+     56          //必须要记得　osal_mem_free(msg_ptr);
+     57          }
+     58          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     59          uint8* guu_build_radio_pack(uint8 cmdId, uint8 dataLen, uint8*pData)
+   \                     guu_build_radio_pack:
+     60          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 3,R1
+   \   000007   8A..         MOV     ?V0 + 4,R2
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+     61          	//无线的传输非常简陋,命头令+肉容+FCS校验码,但是基本能保证 完整
+     62          	uint8 *msg_ptr;
+     63          	if(dataLen > 0)
+   \   00000D   EA           MOV     A,R2
+   \   00000E   605D         JZ      ??guu_build_radio_pack_0
+     64          	{
+     65          		msg_ptr = osal_mem_alloc( (dataLen +2) * sizeof(uint8) );
+   \   000010                ; Setup parameters for call to function osal_mem_alloc
+   \   000010   2402         ADD     A,#0x2
+   \   000012   0A           INC     R2
+   \   000013   0A           INC     R2
+   \   000014   E4           CLR     A
+   \   000015   3400         ADDC    A,#0x0
+   \   000017   FB           MOV     R3,A
+   \   000018   12....       LCALL   ??osal_mem_alloc?relay
+   \   00001B   8A..         MOV     ?V0 + 6,R2
+   \   00001D   8B..         MOV     ?V0 + 7,R3
+   \   00001F   AE..         MOV     R6,?V0 + 6
+   \   000021   AF..         MOV     R7,?V0 + 7
+     66          		if(msg_ptr!=NULL)
+   \   000023   EE           MOV     A,R6
+   \   000024   4F           ORL     A,R7
+   \   000025   6040         JZ      ??guu_build_radio_pack_1
+     67          		{
+     68          		msg_ptr[0] = cmdId;
+   \   000027   8E82         MOV     DPL,R6
+   \   000029   8F83         MOV     DPH,R7
+   \   00002B   E5..         MOV     A,?V0 + 3
+   \   00002D   F0           MOVX    @DPTR,A
+     69          		osal_memcpy(&msg_ptr[1], pData,dataLen);
+   \   00002E                ; Setup parameters for call to function osal_memcpy
+   \   00002E   75..00       MOV     ?V0 + 2,#0x0
+   \   000031   78..         MOV     R0,#?V0 + 0
+   \   000033   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000036   85....       MOV     ?V0 + 0,?V0 + 4
+   \   000039   AC..         MOV     R4,?V0 + 0
+   \   00003B   7D00         MOV     R5,#0x0
+   \   00003D   8E82         MOV     DPL,R6
+   \   00003F   8F83         MOV     DPH,R7
+   \   000041   A3           INC     DPTR
+   \   000042   AA82         MOV     R2,DPL
+   \   000044   AB83         MOV     R3,DPH
+   \   000046   12....       LCALL   ??osal_memcpy?relay
+   \   000049   7403         MOV     A,#0x3
+   \   00004B   12....       LCALL   ?DEALLOC_XSTACK8
+     70          		msg_ptr[dataLen+1] = MT_UartCalcFCS(msg_ptr,dataLen+1);
+   \   00004E                ; Setup parameters for call to function MT_UartCalcFCS
+   \   00004E   7401         MOV     A,#0x1
+   \   000050   25..         ADD     A,?V0 + 4
+   \   000052   F9           MOV     R1,A
+   \   000053   EE           MOV     A,R6
+   \   000054   FA           MOV     R2,A
+   \   000055   EF           MOV     A,R7
+   \   000056   FB           MOV     R3,A
+   \   000057   12....       LCALL   ??MT_UartCalcFCS?relay
+   \   00005A   EE           MOV     A,R6
+   \   00005B   25..         ADD     A,?V0 + 0
+   \   00005D   F582         MOV     DPL,A
+   \   00005F   EF           MOV     A,R7
+   \   000060   3400         ADDC    A,#0x0
+   \   000062   F583         MOV     DPH,A
+   \   000064   A3           INC     DPTR
+   \   000065   E9           MOV     A,R1
+   \   000066   F0           MOVX    @DPTR,A
+     71          		}
+     72          		return msg_ptr;	
+   \                     ??guu_build_radio_pack_1:
+   \   000067   EE           MOV     A,R6
+   \   000068   FA           MOV     R2,A
+   \   000069   EF           MOV     A,R7
+   \   00006A   FB           MOV     R3,A
+   \   00006B   8004         SJMP    ??guu_build_radio_pack_2
+     73          	}else
+     74          		return NULL;
+   \                     ??guu_build_radio_pack_0:
+   \   00006D   7A00         MOV     R2,#0x0
+   \   00006F   7B00         MOV     R3,#0x0
+   \                     ??guu_build_radio_pack_2:
+   \   000071   7F08         MOV     R7,#0x8
+   \   000073   02....       LJMP    ?BANKED_LEAVE_XDATA
+     75          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_build_pack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_build_pack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_build_radio_pack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_build_radio_pack
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     guu_build_pack           1      0     21
+       -> osal_mem_alloc      0      0     36
+       -> osal_memcpy         0      0     42
+       -> osal_memcpy         0      0     42
+       -> crc8                0      0     36
+     guu_build_radio_pack     1      0     19
+       -> osal_mem_alloc      0      0     32
+       -> osal_memcpy         0      0     38
+       -> MT_UartCalcFCS      0      0     32
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     guu_build_pack                170
+     guu_build_radio_pack          118
+     ??guu_build_pack?relay          6
+     ??guu_build_radio_pack?relay    6
+
+ 
+ 288 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+ 
+ 300 bytes of CODE memory
+
+Errors: none
+Warnings: none

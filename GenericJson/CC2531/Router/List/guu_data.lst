@@ -1,0 +1,326 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         25/Jan/2015  17:06:12 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\weikong\Source\guu_data.c          #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wRouter.cfg" (-DCPU32MHZ             #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0              #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\weikong\Source\guu_data.c" -D ZTOOL_P1 -D   #
+#                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D          #
+#                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D     #
+#                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D   #
+#                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D              #
+#                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                  #
+#                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D       #
+#                          xPOWER_SAVING -lC "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\List\" -lA         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\Router\List\"   #
+#                          --diag_suppress Pe001,Pa010 -o "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\Obj\" -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\Source\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\ZMain\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\" -I "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\cc2531\" -I      #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\usb\class_cdc\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\high_level\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\" -I "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\single_chip\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 #
+#                          a\Projects\zstack\Samples\GenericApp\CC2531\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\saddr\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\sdata\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\af\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\nwk\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sapi\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sec\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sys\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\zdo\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2531\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\weikong\Source\"    #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\List\guu_ #
+#                          data.lst                                           #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\Obj\guu_d #
+#                          ata.r51                                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\guu_data.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "OSAL.h"
+      5          #include "OSAL_Nv.h"
+      6          #include "AF.h"
+      7          #include "ZDApp.h"
+      8          #include "ZDObject.h"
+      9          #include "ZDProfile.h"
+     10          
+     11          #include "MT_UART.h"
+     12          #include "GenericApp.h"
+     13          #include "DebugTrace.h"
+     14          
+     15          #if !defined( WIN32 )
+     16            #include "OnBoard.h"
+     17          #endif
+     18          
+     19          /* HAL */
+     20          #include "hal_lcd.h"
+     21          #include "hal_led.h"
+     22          #include "hal_key.h"
+     23          #include "hal_uart.h"
+     24          
+     25          #include "base.h"
+     26          #include "guu_common_def.h"
+     27          #include "guu_data.h"
+     28          
+     29          #include "guu_io.h"
+     30          
+     31          
+     32          /*
+     33          几个可能用到的结构体，从afIncomingMSGPacket_t 
+     34          引伸出来
+     35          
+     36          typedef struct
+     37          {
+     38            osal_event_hdr_t hdr;
+     39            uint8 a;
+     40            uint8 b;
+     41          } short_cmd_t;
+     42          
+     43          typedef struct
+     44          {
+     45            osal_event_hdr_t hdr;
+     46            uint8 a;
+     47            uint8 b;
+     48            uint8 c;
+     49            uint8 d;
+     50          } short_cmd_t2;
+     51          
+     52          typedef struct
+     53          {
+     54            osal_event_hdr_t hdr;
+     55            uint16 endpoint;
+     56            uint16 transID;
+     57          } long_cmd_t; 
+     58          通过 osal_send_msg 传递结构 体信号
+     59          在对应的_ProcessEvent中处理 结构体
+     60          每个函数,可能只有一个 参数,就是一个 MSGpt
+     61          然后相应的_ProcessEvent会自动 free_mem/osal_msg_deallocate  释放内存
+     62          
+     63          */
+     64          //运算Fcs值 从 长度值开始,到最后倒数第2个,不能把FCs也加进FCs运算了
+     65          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     66          void guu_data_cb(afIncomingMSGPacket_t *msg)//无线传入 
+   \                     guu_data_cb:
+     67          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 6
+   \   000004   74FA         MOV     A,#-0x6
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+     68          	base_pack_t bpt;
+     69          	//在测试阶段，是没有CRC校验的
+     70          	//正式场景是肯定要有crc或是FCS校验的
+     71          	
+     72            if(msg->cmd.DataLength > 0)//下面的命令全部用较检长度来判定执行，zigbee空中命令自有底层CRC32
+   \   000009   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00000C   F8           MOV     R0,A
+   \   00000D   A3           INC     DPTR
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   F9           MOV     R1,A
+   \   000010   E8           MOV     A,R0
+   \   000011   49           ORL     A,R1
+   \   000012   603B         JZ      ??guu_data_cb_0
+     73            {
+     74          		bpt.flag = FROM_WIRE;
+   \   000014   7402         MOV     A,#0x2
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   7401         MOV     A,#0x1
+   \   00001B   F0           MOVX    @DPTR,A
+     75          		bpt.len  = msg->cmd.DataLength;
+   \   00001C   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   00001F   C0E0         PUSH    A
+   \   000021   7403         MOV     A,#0x3
+   \   000023   12....       LCALL   ?XSTACK_DISP0_8
+   \   000026   D0E0         POP     A
+   \   000028   F0           MOVX    @DPTR,A
+     76          		bpt.data = msg->cmd.Data;	
+   \   000029   EA           MOV     A,R2
+   \   00002A   2422         ADD     A,#0x22
+   \   00002C   F582         MOV     DPL,A
+   \   00002E   EB           MOV     A,R3
+   \   00002F   3400         ADDC    A,#0x0
+   \   000031   F583         MOV     DPH,A
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   F8           MOV     R0,A
+   \   000035   A3           INC     DPTR
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   F9           MOV     R1,A
+   \   000038   7404         MOV     A,#0x4
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   E8           MOV     A,R0
+   \   00003E   F0           MOVX    @DPTR,A
+   \   00003F   A3           INC     DPTR
+   \   000040   E9           MOV     A,R1
+   \   000041   F0           MOVX    @DPTR,A
+     77          		center_proc(&bpt);
+   \   000042                ; Setup parameters for call to function center_proc
+   \   000042   85..82       MOV     DPL,?XSP + 0
+   \   000045   85..83       MOV     DPH,?XSP + 1
+   \   000048   AA82         MOV     R2,DPL
+   \   00004A   AB83         MOV     R3,DPH
+   \   00004C   12....       LCALL   ??center_proc?relay
+     78            }
+     79          }
+   \                     ??guu_data_cb_0:
+   \   00004F   7406         MOV     A,#0x6
+   \   000051   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000054   D083         POP     DPH
+   \   000056   D082         POP     DPL
+   \   000058   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   EA           MOV     A,R2
+   \   000001   2420         ADD     A,#0x20
+   \   000003   F582         MOV     DPL,A
+   \   000005   EB           MOV     A,R3
+   \   000006   3400         ADDC    A,#0x0
+   \   000008   F583         MOV     DPH,A
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_data_cb?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_data_cb
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     guu_data_cb          3      0      6
+       -> center_proc     4      0     12
+
+
+   Segment part sizes:
+
+     Function/Label      Bytes
+     --------------      -----
+     guu_data_cb           91
+     ?Subroutine0          12
+     ??guu_data_cb?relay    6
+
+ 
+ 103 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+ 
+ 109 bytes of CODE memory
+
+Errors: none
+Warnings: none

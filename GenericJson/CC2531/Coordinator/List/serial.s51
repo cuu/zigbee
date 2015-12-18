@@ -1,0 +1,794 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.40338/W32 for 8051        25/Jan/2015  16:46:55 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\weikong\Source\serial.c          /
+//    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\GenericApp\CC2531\..\..\..\T /
+//                          ools\CC2530DB\f8wCoord.cfg" (-DCPU32MHZ           /
+//                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TR /
+//                          UE -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8     /
+//                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)   /
+//                          -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\GenericApp\CC2531\..\..\..\T /
+//                          ools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO         /
+//                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\weikong\Source\serial.c" -D ZTOOL_P1 -D   /
+//                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D         /
+//                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D    /
+//                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D   /
+//                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D  /
+//                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D             /
+//                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                 /
+//                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D      /
+//                          xPOWER_SAVING -lC "C:\Texas                       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\Coordinator\List\" -lA  /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\GenericApp\CC2531\Coordinator\L /
+//                          ist\" --diag_suppress Pe001,Pa010 -o "C:\Texas    /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\Coordinator\Obj\" -e    /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\Source\" -I          /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\GenericApp\CC2531\..\..\..\ZMai /
+//                          n\TI2530DB\" -I "C:\Texas                         /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\hal\include\" -I "C:\Texas                     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\hal\target\CC2530USB\" -I "C:\Texas            /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\hal\target\CC2530USB\usb\library\" -I          /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\GenericApp\CC2531\..\..\..\..\. /
+//                          .\Components\hal\target\CC2530USB\usb\library\cc2 /
+//                          531\" -I "C:\Texas Instruments\ZStack-CC2530-2.5. /
+//                          1a\Projects\zstack\Samples\GenericApp\CC2531\..\. /
+//                          .\..\..\..\Components\hal\target\CC2530USB\usb\cl /
+//                          ass_cdc\" -I "C:\Texas Instruments\ZStack-CC2530- /
+//                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\ /
+//                          ..\..\..\..\..\Components\mac\include\" -I        /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\GenericApp\CC2531\..\..\..\..\. /
+//                          .\Components\mac\high_level\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\mac\low_level\srf04\" -I "C:\Texas             /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\mac\low_level\srf04\single_chip\" -I           /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\GenericApp\CC2531\..\..\..\..\. /
+//                          .\Components\mt\" -I "C:\Texas                    /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\osal\include\" -I "C:\Texas                    /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\services\saddr\" -I "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\services\sdata\" -I "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\stack\af\" -I "C:\Texas                        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\stack\nwk\" -I "C:\Texas                       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\stack\sapi\" -I "C:\Texas                      /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\stack\sec\" -I "C:\Texas                       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\stack\sys\" -I "C:\Texas                       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\stack\zdo\" -I "C:\Texas                       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\GenericApp\CC2531\..\..\..\..\..\Componen /
+//                          ts\zmac\" -I "C:\Texas Instruments\ZStack-CC2530- /
+//                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\ /
+//                          ..\..\..\..\..\Components\zmac\f8w\" -I           /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\GenericApp\CC2531\..\..\weikong /
+//                          \Source\" -Ohz --require_prototypes               /
+//    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\GenericApp\CC2531\Coordinator\Li /
+//                          st\serial.s51                                     /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME serial
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??guu_serial_callback?relay
+        FUNCTION ??guu_serial_callback?relay,0203H
+        PUBLIC ??guu_serial_init?relay
+        FUNCTION ??guu_serial_init?relay,0203H
+        PUBLIC ??guu_usart2?relay
+        FUNCTION ??guu_usart2?relay,0203H
+        PUBLIC ??guu_usart?relay
+        FUNCTION ??guu_usart?relay,0203H
+        PUBLIC guu_serial_callback
+        FUNCTION guu_serial_callback,021603H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC guu_serial_init
+        FUNCTION guu_serial_init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 29, STACK
+        PUBLIC guu_usart
+        FUNCTION guu_usart,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC guu_usart2
+        FUNCTION guu_usart2,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+HalUARTWrite        SYMBOL "HalUARTWrite"
+HalUARTRead         SYMBOL "HalUARTRead"
+send_baseinfo       SYMBOL "send_baseinfo"
+HalUARTOpen         SYMBOL "HalUARTOpen"
+??HalUARTOpen?relay SYMBOL "?relay", HalUARTOpen
+??HalUARTRead?relay SYMBOL "?relay", HalUARTRead
+??HalUARTWrite?relay SYMBOL "?relay", HalUARTWrite
+??send_baseinfo?relay SYMBOL "?relay", send_baseinfo
+guu_serial_callback SYMBOL "guu_serial_callback"
+??guu_serial_callback?relay SYMBOL "?relay", guu_serial_callback
+guu_serial_init     SYMBOL "guu_serial_init"
+??guu_serial_init?relay SYMBOL "?relay", guu_serial_init
+guu_usart2          SYMBOL "guu_usart2"
+??guu_usart2?relay  SYMBOL "?relay", guu_usart2
+guu_usart           SYMBOL "guu_usart"
+??guu_usart?relay   SYMBOL "?relay", guu_usart
+
+        EXTERN HalUARTWrite
+        FUNCTION HalUARTWrite,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalUARTRead
+        FUNCTION HalUARTRead,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN send_baseinfo
+        FUNCTION send_baseinfo,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalUARTOpen
+        FUNCTION HalUARTOpen,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??HalUARTOpen?relay
+        FUNCTION ??HalUARTOpen?relay,00H
+        EXTERN ??HalUARTRead?relay
+        FUNCTION ??HalUARTRead?relay,00H
+        EXTERN ??HalUARTWrite?relay
+        FUNCTION ??HalUARTWrite?relay,00H
+        EXTERN ??send_baseinfo?relay
+        FUNCTION ??send_baseinfo?relay,00H
+        EXTERN guu_sender
+
+// C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\serial.c
+//    1 #include <iocc2530.h>
+//    2 #include <stdio.h>
+//    3 #include <stdlib.h>
+//    4 #include <string.h>
+//    5 
+//    6 #include "OSAL.h"
+//    7 #include "OSAL_Nv.h"
+//    8 
+//    9 #include "AF.h"
+//   10 #include "ZDApp.h"
+//   11 #include "ZDObject.h"
+//   12 #include "ZDProfile.h"
+//   13 #include "ZDSecMgr.h"
+//   14 
+//   15 #if !defined( WIN32 )
+//   16   #include "OnBoard.h"
+//   17 #endif
+//   18 
+//   19 /* HAL */
+//   20 #include "hal_adc.h"
+//   21 #include "hal_mcu.h"
+//   22 #include "hal_lcd.h"
+//   23 #include "hal_led.h"
+//   24 #include "hal_key.h"
+//   25 #include "hal_uart.h"
+//   26 #include "hal_drivers.h"
+//   27 
+//   28 #include "serial.h"
+//   29 #include "base.h"
+//   30 
+//   31 extern uint8 guu_sender;
+//   32 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   33 void guu_usart2(uint8*d, uint8 len)
+guu_usart2:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function guu_usart2
+        CODE
+//   34 {
+        FUNCALL guu_usart2, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+//   35   HalUARTWrite( SER_PORT2,  d, len);
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R4,A
+        MOV     R5,#0x0
+        MOV     R1,#0x1
+        LCALL   ??HalUARTWrite?relay
+        CFI EndBlock cfiBlock0
+//   36 }
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//   37 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   38 uint8 guu_usart(uint8*d, uint8 len)//uint8的类型表示了，他一次最大发送255个字节
+guu_usart:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function guu_usart
+        CODE
+//   39 {
+        FUNCALL guu_usart, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//   40   //if( _NIB.nwkDevAddress != 0x0000 )
+//   41 		if(d!=NULL)
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??guu_usart_0
+//   42 		{
+//   43     	return HalUARTWrite(SER_PORT, d, len );
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     ?V0 + 0,R6
+        MOV     R4,?V0 + 0
+        MOV     R5,#0x0
+        MOV     R1,#0x0
+        LCALL   ??HalUARTWrite?relay
+        MOV     A,R2
+        MOV     R1,A
+        SJMP    ??guu_usart_1
+//   44 		}else
+//   45 		{
+//   46 			return ZFailure;
+??guu_usart_0:
+        MOV     R1,#0x1
+//   47 		}
+??guu_usart_1:
+        SJMP    ?Subroutine0
+        CFI EndBlock cfiBlock2
+//   48 }
+//   49 
+//   50 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   51 void guu_serial_callback(uint8 port, uint8 event)
+guu_serial_callback:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function guu_serial_callback
+        CODE
+//   52 {
+        FUNCALL guu_serial_callback, HalUARTRead
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL guu_serial_callback, send_baseinfo
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 12
+        MOV     A,#-0xc
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+//   53 	//弃用了，使用MT回调函数了
+//   54   uint8 guu_serial_buff[12];
+//   55   uint8 readBytes = 0;
+//   56 //  uint8 sl;
+//   57 //  guu_serial_buff = osal_mem_alloc(64*sizeof(uint8));
+//   58   //serial_data = osal_mem_alloc(128);
+//   59   
+//   60   readBytes = HalUARTRead(SER_PORT, guu_serial_buff, 12);
+//   61   if (readBytes > 0)
+        ; Setup parameters for call to function HalUARTRead
+        MOV     R4,#0xc
+        MOV     R5,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x0
+        LCALL   ??HalUARTRead?relay
+        MOV     A,R2
+        JZ      ??guu_serial_callback_0
+//   62   {
+//   63     guu_sender = 0;
+        MOV     DPTR,#guu_sender
+        CLR     A
+        MOVX    @DPTR,A
+//   64     if(guu_serial_buff[0] == 0x02)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??guu_serial_callback_0
+//   65     {
+//   66       send_baseinfo();
+        ; Setup parameters for call to function send_baseinfo
+        LCALL   ??send_baseinfo?relay
+//   67     }
+//   68     
+//   69     //usart_debug(guu_serial_buff,readBytes);
+//   70     //parse_procotol( guu_serial_buff, readBytes, _NIB.nwkDevAddress, 0x00);
+//   71     /*
+//   72     sl = guu_serial_data_length;
+//   73     if( (readBytes + sl) <= SER_DATA_LEN)
+//   74     {
+//   75       if(sl == 0)
+//   76       {
+//   77         memcpy(serial_data, guu_serial_buff, readBytes);
+//   78       }else
+//   79       {
+//   80         memcpy(&serial_data[sl],guu_serial_buff, readBytes);
+//   81       }
+//   82       guu_serial_data_length = sl+readBytes;
+//   83       parse_modbus( serial_data, guu_serial_data_length, _NIB.nwkDevAddress, FROM_RS232);
+//   84     }else // pool overflowed
+//   85     {
+//   86         memcpy(serial_data, guu_serial_buff, readBytes);
+//   87         guu_serial_data_length = readBytes;
+//   88         parse_modbus( serial_data, readBytes, _NIB.nwkDevAddress, FROM_RS232);
+//   89     }
+//   90     */
+//   91   }
+//   92 
+//   93   //guu_osal_mem_free(guu_serial_buff); 
+//   94   //guu_osal_mem_free(serial_data);
+//   95   return;
+??guu_serial_callback_0:
+        MOV     A,#0xc
+        CFI EndBlock cfiBlock3
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+//   96 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+-5
+        CFI CFA_XSP16 add(XSP16, 12)
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI Invalid
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 XSP16+0
+        CFI Valid
+        POP     DPH
+        CFI CFA_SP SP+-4
+        CFI DPH0 SameValue
+        POP     DPL
+        CFI CFA_SP SP+-3
+        CFI DPL0 SameValue
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+//   97 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   98 void guu_serial_init(void )
+guu_serial_init:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function guu_serial_init
+        CODE
+//   99 {
+        FUNCALL guu_serial_init, HalUARTOpen
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 29
+        MOV     A,#-0x1d
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 29)
+//  100   halUARTCfg_t uartConfig;
+//  101 
+//  102   uartConfig.configured           = TRUE;                                                   // 2x30 don't care - see uart driver.
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  103   uartConfig.baudRate             = HAL_UART_BR_38400;                       //38400
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  104   uartConfig.flowControl          = FALSE;
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  105   uartConfig.flowControlThreshold = 64;        // 64.
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x40
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  106   uartConfig.rx.maxBufSize        = 128;                  // 128
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  107   uartConfig.tx.maxBufSize        = 128;                  // 128
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  108   uartConfig.idleTimeout          = 12;                      // 6
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xc
+        MOVX    @DPTR,A
+//  109   uartConfig.intEnable            = TRUE;                                                 
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  110   uartConfig.callBackFunc         = guu_serial_callback;                   // Call back function
+        MOV     A,#0x1b
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#??guu_serial_callback?relay & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(??guu_serial_callback?relay >> 8) & 0xff
+        MOVX    @DPTR,A
+//  111   
+//  112   HalUARTOpen (SER_PORT, &uartConfig);
+        ; Setup parameters for call to function HalUARTOpen
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x0
+        LCALL   ??HalUARTOpen?relay
+//  113 
+//  114   /*
+//  115   PERCFG |= BV(1); // uart1 alt 2 location
+//  116   
+//  117   uartConfig.configured           = TRUE;                                                   // 2x30 don't care - see uart driver.
+//  118   uartConfig.baudRate             = guu_com2_speed;                       //38400
+//  119   uartConfig.flowControl          = FALSE;
+//  120   uartConfig.flowControlThreshold = 64;        // 64.
+//  121   uartConfig.rx.maxBufSize        = 512;                  // 128
+//  122   uartConfig.tx.maxBufSize        = 512;                  // 128
+//  123   uartConfig.idleTimeout          = 255;                      // 6
+//  124   uartConfig.intEnable            = TRUE;                                                 
+//  125   uartConfig.callBackFunc         = Serial_callBack2;                   // Call back function
+//  126   
+//  127   HalUARTOpen (SER_PORT2, &uartConfig);
+//  128   */
+//  129   
+//  130 }
+        MOV     A,#0x1d
+        SJMP    ?Subroutine1
+        CFI EndBlock cfiBlock5
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??guu_usart2?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    guu_usart2
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??guu_usart?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    guu_usart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??guu_serial_callback?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    guu_serial_callback
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??guu_serial_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    guu_serial_init
+
+        END
+// 
+// 220 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+// 
+// 244 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

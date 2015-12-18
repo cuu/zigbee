@@ -1,0 +1,529 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         25/Jan/2015  17:06:12 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\weikong\Source\guu_event.c         #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wRouter.cfg" (-DCPU32MHZ             #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0              #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\weikong\Source\guu_event.c" -D ZTOOL_P1 -D  #
+#                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D          #
+#                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D     #
+#                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D   #
+#                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D              #
+#                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                  #
+#                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D       #
+#                          xPOWER_SAVING -lC "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\List\" -lA         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\Router\List\"   #
+#                          --diag_suppress Pe001,Pa010 -o "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\Obj\" -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\Source\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\ZMain\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\" -I "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\cc2531\" -I      #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\usb\class_cdc\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\high_level\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\" -I "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\single_chip\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 #
+#                          a\Projects\zstack\Samples\GenericApp\CC2531\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\saddr\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\sdata\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\af\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\nwk\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sapi\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sec\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sys\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\zdo\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2531\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\weikong\Source\"    #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\List\guu_ #
+#                          event.lst                                          #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\Obj\guu_e #
+#                          vent.r51                                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\guu_event.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "OSAL.h"
+      5          #include "AF.h"
+      6          #include "ZDApp.h"
+      7          #include "ZDObject.h"
+      8          #include "ZDProfile.h"
+      9          
+     10          #include "MT_UART.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+     11          #include "MT_APP.h"
+     12          
+     13          #include "GenericApp.h"
+     14          #include "DebugTrace.h"
+     15          
+     16          #if !defined( WIN32 )
+     17            #include "OnBoard.h"
+     18          #endif
+     19          
+     20          /* HAL */
+     21          #include "hal_lcd.h"
+     22          #include "hal_led.h"
+     23          #include "hal_key.h"
+     24          #include "hal_uart.h"
+     25          
+     26          #include "guu_common_def.h"
+     27          #include "crc.h"
+     28          #include "serial.h"
+     29          #include "base.h"
+     30          #include "guu_timer.h"
+     31          #include "guu_key.h"
+     32          #include "guu_data.h"
+     33          #include "guu_io.h"
+     34          #include "guu_init.h"
+     35          #include "guu_mt.h"
+     36          #include "guu_event.h"
+     37          #include "guu_adc.h"
+     38          
+     39          //byte Guu_TaskID; 
+     40          
+     41          // 我的数据结构是仿 mtOSALSerialData_t ,最简单的结构体在整个zstack架构中
+     42          
+     43          extern uint32 _zgDefaultChannelList;
+     44          extern uint16 _zgConfigPANID;
+     45          
+     46          static void Guu_ProcessIncomingCommand( mtOSALSerialData_t *msg )
+                             ^
+Warning[Pe177]: function "Guu_ProcessIncomingCommand" was declared but never
+          referenced
+     47          {
+     48          //  uint8 len, *msg_ptr = msg->msg;
+     49            /* Use the first byte of the message as the command ID */
+     50            switch ( msg->hdr.event )
+     51            {
+     52            case GUU_MT_EVENT:
+     53              {
+     54                guu_mt_app_user_test_cb( (app_user_test_t*)msg);
+     55              }break;
+     56            default:break;
+     57            }
+     58          }
+     59          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     60          uint16 Guu_ProcessEvent( uint8 task_id, uint16 events )
+   \                     Guu_ProcessEvent:
+     61          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   8A..         MOV     ?V0 + 0,R2
+   \   000009   8B..         MOV     ?V0 + 1,R3
+     62          	//事件从某个Taskid上发过来之后，不能再发送到相同的TaskID的任务
+     63          	// newlisp bits 某值 
+     64          	// 能看到 是否 会 ＆ 成功
+     65          	// 1000 和100 ,只要多一位0，就不会& 有结果
+     66          	// 很多event值相近的话，全是用case 来判断，而非 & 号
+     67            /* Could be multiple events, so switch won't work */
+     68          	afIncomingMSGPacket_t *msg_ptr;
+     69            if ( events & SYS_EVENT_MSG )// 这儿是必须要有数据结构体传入的
+   \   00000B   EB           MOV     A,R3
+   \   00000C   5480         ANL     A,#0x80
+   \   00000E   603A         JZ      ??Guu_ProcessEvent_0
+     70            {
+     71              msg_ptr = (afIncomingMSGPacket_t *)osal_msg_receive(task_id);
+   \   000010                ; Setup parameters for call to function osal_msg_receive
+   \   000010   8009         SJMP    ??Guu_ProcessEvent_1
+     72              while (msg_ptr != NULL)
+     73              {
+     74          			switch ( msg_ptr->hdr.event )
+     75          			{
+     76          				case GUU_ADC_EVENT:
+     77          				{
+     78          					//这儿不释放msg_ptr指向的内存空间,不用担心NULL导致while出不来,从链接表中,会一个一个的摘出来
+     79          					//adc的数据体虽然不被 释放,但是会被osal_qHead开始的链表所抛弃,
+     80          					//只要每次不停的osal_msg_enqueue排入队列,才可能被osal_msg_receive寻找到
+     81          				}break;
+     82          			case GUU_MT_EVENT:
+     83          				{
+     84          					guu_mt_app_user_test_cb( (app_user_test_t*)msg_ptr);
+     85          					osal_msg_deallocate((uint8*)msg_ptr);//这儿通常是每个消息处理完之后是要释放内存的，但也存在不释放的
+     86          				}break;
+     87          				default:
+     88          				{
+     89          					osal_msg_deallocate((uint8*)msg_ptr);//保证一般操作是释放内存的
+   \                     ??Guu_ProcessEvent_2:
+   \   000012                ; Setup parameters for call to function osal_msg_deallocate
+   \   000012   EE           MOV     A,R6
+   \   000013   FA           MOV     R2,A
+   \   000014   EF           MOV     A,R7
+   \   000015   FB           MOV     R3,A
+   \   000016   12....       LCALL   ??osal_msg_deallocate?relay
+     90          				}
+     91          				break;
+     92          			}
+     93          
+     94          			//如果仍有信息存余 ，接着干
+     95          			msg_ptr = (afIncomingMSGPacket_t *)osal_msg_receive(task_id);
+   \                     ??Guu_ProcessEvent_3:
+   \   000019                ; Setup parameters for call to function osal_msg_receive
+   \   000019   A9..         MOV     R1,?V0 + 2
+   \                     ??Guu_ProcessEvent_1:
+   \   00001B   12....       LCALL   ??osal_msg_receive?relay
+   \   00001E   8A..         MOV     ?V0 + 4,R2
+   \   000020   8B..         MOV     ?V0 + 5,R3
+   \   000022   AE..         MOV     R6,?V0 + 4
+   \   000024   AF..         MOV     R7,?V0 + 5
+   \   000026   EE           MOV     A,R6
+   \   000027   4F           ORL     A,R7
+   \   000028   6016         JZ      ??Guu_ProcessEvent_4
+   \   00002A   8E82         MOV     DPL,R6
+   \   00002C   8F83         MOV     DPH,R7
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   14           DEC     A
+   \   000030   6005         JZ      ??Guu_ProcessEvent_5
+   \   000032   14           DEC     A
+   \   000033   60E4         JZ      ??Guu_ProcessEvent_3
+   \   000035   80DB         SJMP    ??Guu_ProcessEvent_2
+   \                     ??Guu_ProcessEvent_5:
+   \   000037                ; Setup parameters for call to function guu_mt_app_user_test_cb
+   \   000037   EE           MOV     A,R6
+   \   000038   FA           MOV     R2,A
+   \   000039   EF           MOV     A,R7
+   \   00003A   FB           MOV     R3,A
+   \   00003B   12....       LCALL   ??guu_mt_app_user_test_cb?relay
+   \   00003E                ; Setup parameters for call to function osal_msg_deallocate
+   \   00003E   80D2         SJMP    ??Guu_ProcessEvent_2
+     96          		}
+     97          			return (events ^ SYS_EVENT_MSG);
+   \                     ??Guu_ProcessEvent_4:
+   \   000040   AA..         MOV     R2,?V0 + 0
+   \   000042   E5..         MOV     A,?V0 + 1
+   \   000044   6480         XRL     A,#0x80
+   \                     ??Guu_ProcessEvent_6:
+   \   000046   FB           MOV     R3,A
+   \   000047   02....       LJMP    ??Guu_ProcessEvent_7 & 0xFFFF
+     98          	}
+     99            //以下是空头文件。。。
+    100            if (events & ZDO_STATE_CHANGE)
+   \                     ??Guu_ProcessEvent_0:
+   \   00004A   EA           MOV     A,R2
+   \   00004B   54D1         ANL     A,#0xd1
+   \   00004D   7003         JNZ     $+5
+   \   00004F   02....       LJMP    ??Guu_ProcessEvent_8 & 0xFFFF
+    101            {
+    102              //HalLedSet (HAL_LED_1, HAL_LED_MODE_ON); 
+    103          #if defined(ZG_BUILD_COORDINATOR_TYPE)
+    104              if(_NIB.nwkDevAddress !=INVALID_NODE_ADDR)
+   \   000052   90....       MOV     DPTR,#_NIB + 20
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   64FE         XRL     A,#0xfe
+   \   000058   7003         JNZ     ??Guu_ProcessEvent_9
+   \   00005A   A3           INC     DPTR
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F4           CPL     A
+   \                     ??Guu_ProcessEvent_9:
+   \   00005D   606D         JZ      ??Guu_ProcessEvent_10
+    105              {
+    106                if(_zgConfigPANID != _NIB.nwkPanId && _NIB.nwkPanId != INVALID_PAN_ID)
+   \   00005F   90....       MOV     DPTR,#_zgConfigPANID
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   F8           MOV     R0,A
+   \   000064   A3           INC     DPTR
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   F9           MOV     R1,A
+   \   000067   90....       MOV     DPTR,#_NIB + 33
+   \   00006A   E0           MOVX    A,@DPTR
+   \   00006B   68           XRL     A,R0
+   \   00006C   7003         JNZ     ??Guu_ProcessEvent_11
+   \   00006E   A3           INC     DPTR
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   69           XRL     A,R1
+   \                     ??Guu_ProcessEvent_11:
+   \   000071   6059         JZ      ??Guu_ProcessEvent_10
+   \   000073   90....       MOV     DPTR,#_NIB + 33
+   \   000076   E0           MOVX    A,@DPTR
+   \   000077   64FE         XRL     A,#0xfe
+   \   000079   7003         JNZ     ??Guu_ProcessEvent_12
+   \   00007B   A3           INC     DPTR
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   F4           CPL     A
+   \                     ??Guu_ProcessEvent_12:
+   \   00007E   604C         JZ      ??Guu_ProcessEvent_10
+    107                {
+    108          #if defined ( NV_RESTORE )
+    109                  if ( !osal_get_timeoutEx( ZDAppTaskID, ZDO_NWK_UPDATE_NV ) )
+   \   000080                ; Setup parameters for call to function osal_get_timeoutEx
+   \   000080   7A00         MOV     R2,#0x0
+   \   000082   7B02         MOV     R3,#0x2
+   \   000084   90....       MOV     DPTR,#ZDAppTaskID
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   F9           MOV     R1,A
+   \   000089   12....       LCALL   ??osal_get_timeoutEx?relay
+   \   00008C   8B..         MOV     ?V0 + 5,R3
+   \   00008E   EA           MOV     A,R2
+   \   00008F   45..         ORL     A,?V0 + 5
+   \   000091   7003         JNZ     ??Guu_ProcessEvent_13
+    110                  {
+    111                    // Trigger to save info into NV
+    112                    ZDApp_NVUpdate();
+   \   000093                ; Setup parameters for call to function ZDApp_NVUpdate
+   \   000093   12....       LCALL   ??ZDApp_NVUpdate?relay
+    113                  }
+    114          #endif
+    115                  //write to ZCD_NV_PANID
+    116                  _zgConfigPANID  = _NIB.nwkPanId;
+   \                     ??Guu_ProcessEvent_13:
+   \   000096   90....       MOV     DPTR,#_NIB + 33
+   \   000099   E0           MOVX    A,@DPTR
+   \   00009A   F8           MOV     R0,A
+   \   00009B   A3           INC     DPTR
+   \   00009C   E0           MOVX    A,@DPTR
+   \   00009D   F9           MOV     R1,A
+   \   00009E   90....       MOV     DPTR,#_zgConfigPANID
+   \   0000A1   E8           MOV     A,R0
+   \   0000A2   F0           MOVX    @DPTR,A
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   E9           MOV     A,R1
+   \   0000A5   F0           MOVX    @DPTR,A
+    117                  if(guu_osal_nv_write(ZCD_NV_PANID,0,sizeof(_zgConfigPANID),(uint8*)&_zgConfigPANID) ==ZFailure)
+   \   0000A6                ; Setup parameters for call to function guu_osal_nv_write
+   \   0000A6   75....       MOV     ?V0 + 4,#_zgConfigPANID & 0xff
+   \   0000A9   75....       MOV     ?V0 + 5,#(_zgConfigPANID >> 8) & 0xff
+   \   0000AC   78..         MOV     R0,#?V0 + 4
+   \   0000AE   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B1   75..02       MOV     ?V0 + 4,#0x2
+   \   0000B4   75..00       MOV     ?V0 + 5,#0x0
+   \   0000B7   78..         MOV     R0,#?V0 + 4
+   \   0000B9   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000BC   7C00         MOV     R4,#0x0
+   \   0000BE   7D00         MOV     R5,#0x0
+   \   0000C0   7A83         MOV     R2,#-0x7d
+   \   0000C2   7B00         MOV     R3,#0x0
+   \   0000C4   12....       LCALL   ??guu_osal_nv_write?relay
+   \   0000C7   7404         MOV     A,#0x4
+   \   0000C9   12....       LCALL   ?DEALLOC_XSTACK8
+    118                  {
+    119                    //HalLedSet (HAL_LED_1, HAL_LED_MODE_FLASH); 
+    120                  }
+    121                }
+    122              }
+    123          #else
+    124              
+    125          #endif    
+    126              return (events ^ ZDO_STATE_CHANGE);   
+   \                     ??Guu_ProcessEvent_10:
+   \   0000CC   E5..         MOV     A,?V0 + 0
+   \   0000CE   64D1         XRL     A,#0xd1
+   \   0000D0   FA           MOV     R2,A
+   \   0000D1   AB..         MOV     R3,?V0 + 1
+   \   0000D3   802B         SJMP    ??Guu_ProcessEvent_7
+    127            }
+    128          
+    129            if(events & GUU_RESET_TO_NEW_NETWORK)
+   \                     ??Guu_ProcessEvent_8:
+   \   0000D5   EB           MOV     A,R3
+   \   0000D6   5401         ANL     A,#0x1
+   \   0000D8   6022         JZ      ??Guu_ProcessEvent_14
+    130            {
+    131          		
+    132              if(zgWriteStartupOptions (ZG_STARTUP_SET, ZCD_STARTOPT_DEFAULT_NETWORK_STATE) ==ZSuccess)
+   \   0000DA                ; Setup parameters for call to function zgWriteStartupOptions
+   \   0000DA   7A02         MOV     R2,#0x2
+   \   0000DC   79FF         MOV     R1,#-0x1
+   \   0000DE   12....       LCALL   ??zgWriteStartupOptions?relay
+   \   0000E1   E9           MOV     A,R1
+   \   0000E2   700C         JNZ     ??Guu_ProcessEvent_15
+    133          		{
+    134               SystemReset();
+   \   0000E4   C2AF         CLR     0xa8.7
+   \   0000E6   C2AF         CLR     0xa8.7
+   \   0000E8   75C9AB       MOV     0xc9,#-0x55
+   \   0000EB   75C95B       MOV     0xc9,#0x5b
+   \                     ??Guu_ProcessEvent_16:
+   \   0000EE   80FE         SJMP    ??Guu_ProcessEvent_16
+    135          		}else
+    136          		{
+    137          			SystemResetSoft();
+   \                     ??Guu_ProcessEvent_15:
+   \   0000F0                ; Setup parameters for call to function Onboard_soft_reset
+   \   0000F0   12....       LCALL   Onboard_soft_reset & 0xFFFF
+    138          		}
+    139          		return (events^ GUU_RESET_TO_NEW_NETWORK);
+   \   0000F3   AA..         MOV     R2,?V0 + 0
+   \   0000F5   E5..         MOV     A,?V0 + 1
+   \   0000F7   6401         XRL     A,#0x1
+   \   0000F9   02....       LJMP    ??Guu_ProcessEvent_6 & 0xFFFF
+    140            }
+    141            
+    142          /*
+    143            if(events & ZDO_NWK_UPDATE_NV)
+    144            {
+    145              HalLedSet (HAL_LED_1, HAL_LED_MODE_FLASH); 
+    146              return (events^ZDO_NWK_UPDATE_NV);
+    147            }
+    148          */
+    149          
+    150            // Discard unknown events
+    151            return 0;
+   \                     ??Guu_ProcessEvent_14:
+   \   0000FC   7A00         MOV     R2,#0x0
+   \   0000FE   7B00         MOV     R3,#0x0
+   \                     ??Guu_ProcessEvent_7:
+   \   000100   7F06         MOV     R7,#0x6
+   \   000102   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000105                REQUIRE _A_IEN0
+   \   000105                REQUIRE WDCTL
+    152          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Guu_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Guu_ProcessEvent
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     Guu_ProcessEvent                 0      0     18
+       -> osal_msg_receive            0      0     28
+       -> osal_msg_deallocate         0      0     28
+       -> osal_msg_receive            0      0     28
+       -> guu_mt_app_user_test_cb     0      0     28
+       -> osal_msg_deallocate         0      0     28
+       -> osal_get_timeoutEx          0      0     28
+       -> ZDApp_NVUpdate              0      0     28
+       -> guu_osal_nv_write           0      0     36
+       -> zgWriteStartupOptions       0      0     28
+       -> Onboard_soft_reset          0      0     28
+
+
+   Segment part sizes:
+
+     Function/Label           Bytes
+     --------------           -----
+     _A_IEN0                     1
+     WDCTL                       1
+     Guu_ProcessEvent          261
+     ??Guu_ProcessEvent?relay    6
+
+ 
+ 261 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+ 
+ 267 bytes of CODE memory
+   0 bytes of DATA memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: 1

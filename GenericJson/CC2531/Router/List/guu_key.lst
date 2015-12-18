@@ -1,0 +1,444 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         25/Jan/2015  17:06:14 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\weikong\Source\guu_key.c           #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wRouter.cfg" (-DCPU32MHZ             #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0              #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\weikong\Source\guu_key.c" -D ZTOOL_P1 -D    #
+#                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D          #
+#                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D     #
+#                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D   #
+#                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D              #
+#                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                  #
+#                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D       #
+#                          xPOWER_SAVING -lC "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\List\" -lA         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\Router\List\"   #
+#                          --diag_suppress Pe001,Pa010 -o "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\Obj\" -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\Source\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\ZMain\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\" -I "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\cc2531\" -I      #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\usb\class_cdc\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\high_level\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\" -I "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\single_chip\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 #
+#                          a\Projects\zstack\Samples\GenericApp\CC2531\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\saddr\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\sdata\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\af\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\nwk\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sapi\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sec\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sys\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\zdo\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2531\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\weikong\Source\"    #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\List\guu_ #
+#                          key.lst                                            #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\Obj\guu_k #
+#                          ey.r51                                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\guu_key.c
+      1          
+      2          /*********************************************************************
+      3           * INCLUDES
+      4           */
+      5          #include "OSAL.h"
+      6          #include "AF.h"
+      7          #include "ZDApp.h"
+      8          #include "ZDObject.h"
+      9          #include "ZDProfile.h"
+     10          
+     11          #include "GenericApp.h"
+     12          #include "DebugTrace.h"
+     13          
+     14          #if !defined( WIN32 )
+     15            #include "OnBoard.h"
+     16          #endif
+     17          
+     18          /* HAL */
+     19          #include "hal_lcd.h"
+     20          #include "hal_led.h"
+     21          #include "hal_key.h"
+     22          #include "hal_uart.h"
+     23          #include "guu_data.h"
+     24          #include "guu_io.h"
+     25          #include "guu_key.h"
+     26          #include "base.h"
+     27          
+     28          extern io_cmd_data_t*sw_arr[4];
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     29          uint8 guu_key_type;
+   \                     guu_key_type:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     30          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     31          void init_guu_key(void)
+   \                     init_guu_key:
+     32          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     33            guu_key_type = 0;
+   \   000004   90....       MOV     DPTR,#guu_key_type
+   \   000007   E4           CLR     A
+   \   000008   F0           MOVX    @DPTR,A
+     34          }
+   \   000009   D083         POP     DPH
+   \   00000B   D082         POP     DPL
+   \   00000D   02....       LJMP    ?BRET
+     35          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     36          void set_key_type(uint8 id,uint8 flag)
+   \                     set_key_type:
+     37          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     38            // guu_key_type
+     39            // 0-3                                4-7
+     40            // 0 switch, 1 button            reserved
+     41            // 
+     42            if( id >0 && id < 5) // 1234
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   29           ADD     A,R1
+   \   000008   C3           CLR     C
+   \   000009   9404         SUBB    A,#0x4
+   \   00000B   5027         JNC     ??set_key_type_0
+     43            {
+     44              if(flag == BE_SWITCH)
+   \   00000D   EA           MOV     A,R2
+   \   00000E   75..01       MOV     ?V0 + 0,#0x1
+   \   000011   75..00       MOV     ?V0 + 1,#0x0
+   \   000014   7011         JNZ     ??set_key_type_1
+     45              {
+     46                guu_key_type &= ~BV(id);
+   \   000016   E9           MOV     A,R1
+   \   000017   78..         MOV     R0,#?V0 + 0
+   \   000019   12....       LCALL   ?S_SHL
+   \   00001C   E5..         MOV     A,?V0 + 0
+   \   00001E   F4           CPL     A
+   \   00001F   F8           MOV     R0,A
+   \   000020   90....       MOV     DPTR,#guu_key_type
+   \   000023   E0           MOVX    A,@DPTR
+   \   000024   58           ANL     A,R0
+   \   000025   800C         SJMP    ??set_key_type_2
+     47              }else
+     48              {
+     49                guu_key_type |= BV(id);
+   \                     ??set_key_type_1:
+   \   000027   E9           MOV     A,R1
+   \   000028   78..         MOV     R0,#?V0 + 0
+   \   00002A   12....       LCALL   ?S_SHL
+   \   00002D   90....       MOV     DPTR,#guu_key_type
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   45..         ORL     A,?V0 + 0
+   \                     ??set_key_type_2:
+   \   000033   F0           MOVX    @DPTR,A
+     50              }
+     51            }
+     52            return;
+   \                     ??set_key_type_0:
+   \   000034                REQUIRE ?Subroutine0
+   \   000034                ; // Fall through to label ?Subroutine0
+     53          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     54          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     55          uint8 get_key_type(uint8 id)
+   \                     get_key_type:
+     56          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FA           MOV     R2,A
+     57            if(id >0 && id < 5)
+   \   000007   74FF         MOV     A,#-0x1
+   \   000009   2A           ADD     A,R2
+   \   00000A   C3           CLR     C
+   \   00000B   9404         SUBB    A,#0x4
+   \   00000D   501A         JNC     ??get_key_type_0
+     58            {
+     59              if(guu_key_type & BV(id))
+   \   00000F   75..01       MOV     ?V0 + 0,#0x1
+   \   000012   75..00       MOV     ?V0 + 1,#0x0
+   \   000015   EA           MOV     A,R2
+   \   000016   78..         MOV     R0,#?V0 + 0
+   \   000018   12....       LCALL   ?S_SHL
+   \   00001B   90....       MOV     DPTR,#guu_key_type
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   55..         ANL     A,?V0 + 0
+   \   000021   6004         JZ      ??get_key_type_1
+     60              {
+     61                return BE_BUTTON;
+   \   000023   7901         MOV     R1,#0x1
+   \   000025   8002         SJMP    ??get_key_type_0
+     62              }else
+     63              {
+     64                return BE_SWITCH;
+   \                     ??get_key_type_1:
+   \   000027   7900         MOV     R1,#0x0
+     65              }
+     66            }
+     67            
+     68            return id;
+   \                     ??get_key_type_0:
+   \   000029   80..         SJMP    ?Subroutine0
+     69          }
+     70          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     71          void reset_key_cmd(uint8 id)//重置按键绑定的内存缓冲区
+   \                     reset_key_cmd:
+     72          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+     73            if(id >0 && id < 5)
+   \   000007   74FF         MOV     A,#-0x1
+   \   000009   25..         ADD     A,?V0 + 0
+   \   00000B   C3           CLR     C
+   \   00000C   9404         SUBB    A,#0x4
+   \   00000E   5042         JNC     ??reset_key_cmd_0
+     74            {
+     75              if(sw_arr[id] !=NULL)
+   \   000010   E9           MOV     A,R1
+   \   000011   C3           CLR     C
+   \   000012   33           RLC     A
+   \   000013   F8           MOV     R0,A
+   \   000014   E4           CLR     A
+   \   000015   33           RLC     A
+   \   000016   F9           MOV     R1,A
+   \   000017   74..         MOV     A,#sw_arr & 0xff
+   \   000019   28           ADD     A,R0
+   \   00001A   F582         MOV     DPL,A
+   \   00001C   74..         MOV     A,#(sw_arr >> 8) & 0xff
+   \   00001E   39           ADDC    A,R1
+   \   00001F   F583         MOV     DPH,A
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   F8           MOV     R0,A
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   F9           MOV     R1,A
+   \   000026   E8           MOV     A,R0
+   \   000027   49           ORL     A,R1
+   \   000028   6028         JZ      ??reset_key_cmd_0
+     76              {
+     77                guu_osal_mem_free(sw_arr[id]);
+   \   00002A   E5..         MOV     A,?V0 + 0
+   \   00002C   C3           CLR     C
+   \   00002D   33           RLC     A
+   \   00002E   F8           MOV     R0,A
+   \   00002F   E4           CLR     A
+   \   000030   33           RLC     A
+   \   000031   F9           MOV     R1,A
+   \   000032   74..         MOV     A,#sw_arr & 0xff
+   \   000034   28           ADD     A,R0
+   \   000035   F8           MOV     R0,A
+   \   000036   74..         MOV     A,#(sw_arr >> 8) & 0xff
+   \   000038   39           ADDC    A,R1
+   \   000039   F9           MOV     R1,A
+   \   00003A   E8           MOV     A,R0
+   \   00003B   FE           MOV     R6,A
+   \   00003C   E9           MOV     A,R1
+   \   00003D   FF           MOV     R7,A
+   \   00003E                ; Setup parameters for call to function guu_osal_mem_free
+   \   00003E   8E82         MOV     DPL,R6
+   \   000040   8F83         MOV     DPH,R7
+   \   000042   E0           MOVX    A,@DPTR
+   \   000043   FA           MOV     R2,A
+   \   000044   A3           INC     DPTR
+   \   000045   E0           MOVX    A,@DPTR
+   \   000046   FB           MOV     R3,A
+   \   000047   12....       LCALL   ??guu_osal_mem_free?relay
+     78                sw_arr[id]=NULL;
+   \   00004A   8E82         MOV     DPL,R6
+   \   00004C   8F83         MOV     DPH,R7
+   \   00004E   E4           CLR     A
+   \   00004F   F0           MOVX    @DPTR,A
+   \   000050   A3           INC     DPTR
+   \   000051   F0           MOVX    @DPTR,A
+     79              }
+     80            }
+     81          }
+   \                     ??reset_key_cmd_0:
+   \   000052   7F01         MOV     R7,#0x1
+   \   000054   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??init_guu_key?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    init_guu_key
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??set_key_type?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    set_key_type
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_key_type?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_key_type
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??reset_key_cmd?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    reset_key_cmd
+
+   Maximum stack usage in bytes:
+
+     Function               ISTACK PSTACK XSTACK
+     --------               ------ ------ ------
+     get_key_type               0      0     10
+     init_guu_key               2      0      0
+     reset_key_cmd              0      0      9
+       -> guu_osal_mem_free     0      0     18
+     set_key_type               0      0     10
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     guu_key_type             1
+     init_guu_key            16
+     set_key_type            52
+     ?Subroutine0             5
+     get_key_type            43
+     reset_key_cmd           87
+     ??init_guu_key?relay     6
+     ??set_key_type?relay     6
+     ??get_key_type?relay     6
+     ??reset_key_cmd?relay    6
+
+ 
+ 203 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+   1 byte  in segment XDATA_Z
+ 
+ 227 bytes of CODE  memory
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

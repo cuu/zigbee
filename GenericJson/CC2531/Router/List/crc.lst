@@ -1,0 +1,321 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         25/Jan/2015  17:05:37 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\weikong\Source\crc.c               #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wRouter.cfg" (-DCPU32MHZ             #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0              #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\weikong\Source\crc.c" -D ZTOOL_P1 -D        #
+#                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D          #
+#                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D     #
+#                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D   #
+#                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D              #
+#                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                  #
+#                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D       #
+#                          xPOWER_SAVING -lC "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\List\" -lA         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\Router\List\"   #
+#                          --diag_suppress Pe001,Pa010 -o "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\Obj\" -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\Source\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\ZMain\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\" -I "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\cc2531\" -I      #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\usb\class_cdc\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\high_level\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\" -I "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\single_chip\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 #
+#                          a\Projects\zstack\Samples\GenericApp\CC2531\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\saddr\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\sdata\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\af\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\nwk\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sapi\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sec\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sys\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\zdo\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2531\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\weikong\Source\"    #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\List\crc. #
+#                          lst                                                #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\Obj\crc.r #
+#                          51                                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\crc.c
+      1          #include "ZComDef.h"
+      2          #include "hal_drivers.h"
+      3          #include "OSAL.h"
+      4          #include "OSAL_Tasks.h"
+      5          #include "OSAL_Nv.h"
+      6          
+      7          //#include "OSAL_Custom.h"
+      8          
+      9          #if defined ( MT_TASK )
+     10            #include "MT.h"
+     11            #include "MT_TASK.h"
+     12          #endif
+     13          #include <stdio.h>
+     14          #include <stdlib.h>
+     15          #include <string.h>
+     16          
+     17          
+     18          #include "nwk.h"
+     19          #include "APS.h"
+     20          #include "ZDApp.h"
+     21          
+     22          #include "osal_nv.h"
+     23          #include "NLMEDE.h"
+     24          #include "AF.h"
+     25          #include "OnBoard.h"
+     26          #include "nwk_util.h"
+     27          #include "ZDProfile.h"
+     28          #include "ZDObject.h"
+     29          
+     30          #include "hal_adc.h"
+     31          #include "hal_key.h"
+     32          
+     33          #include "crc.h"
+     34          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     35          unsigned short CRCTable[]={
+   \                     CRCTable:
+   \   000000                DS 32
+   \   000020                REQUIRE `?<Initializer for CRCTable>`
+   \   000020                REQUIRE __INIT_XDATA_I
+     36            0x0000, 0xCC01, 0xD801, 0x1400, 0xF001, 0x3C00, 0x2800, 0xE401,
+     37            0xA001, 0x6C00, 0x7800, 0xB401, 0x5000, 0x9C01, 0x8801, 0x4400
+     38          };
+     39          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     40          uint8 crc8( uint8 *data, uint8 len) 
+   \                     crc8:
+     41          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FC           MOV     R4,A
+     42            uint8 crc = 0x00;
+   \   000007   7900         MOV     R1,#0x0
+     43            uint8 extract;
+     44            uint8 tempI,sum;
+     45            while (len--) {
+   \                     ??crc8_0:
+   \   000009   EC           MOV     A,R4
+   \   00000A   FD           MOV     R5,A
+   \   00000B   74FF         MOV     A,#-0x1
+   \   00000D   2D           ADD     A,R5
+   \   00000E   1C           DEC     R4
+   \   00000F   04           INC     A
+   \   000010   6032         JZ      ??crc8_1
+     46              extract = *data++;
+   \   000012   8A82         MOV     DPL,R2
+   \   000014   8B83         MOV     DPH,R3
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   FE           MOV     R6,A
+   \   000018   A3           INC     DPTR
+   \   000019   AA82         MOV     R2,DPL
+   \   00001B   AB83         MOV     R3,DPH
+     47              for (tempI = 8; tempI; tempI--) {
+   \   00001D   7808         MOV     R0,#0x8
+     48                	sum = (crc ^ extract) & 0x01;
+   \                     ??crc8_2:
+   \   00001F   EE           MOV     A,R6
+   \   000020   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000022   92F0         MOV     B.0,C
+   \   000024   E9           MOV     A,R1
+   \   000025   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000027   30F001       JNB     B.0,??crc8_3
+   \   00002A   B3           CPL     C
+   \                     ??crc8_3:
+   \   00002B   E4           CLR     A
+   \   00002C   33           RLC     A
+   \   00002D   FF           MOV     R7,A
+     49                	crc >>= 1;
+   \   00002E   E9           MOV     A,R1
+   \   00002F   13           RRC     A
+   \   000030   F9           MOV     R1,A
+     50                  if (sum) {
+   \   000031   EF           MOV     A,R7
+   \   000032   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000034   5004         JNC     ??crc8_4
+     51                  crc ^= 0x8C;
+   \   000036   E9           MOV     A,R1
+   \   000037   648C         XRL     A,#0x8c
+   \   000039   F9           MOV     R1,A
+     52                  }
+     53                  extract >>= 1;
+   \                     ??crc8_4:
+   \   00003A   EE           MOV     A,R6
+   \   00003B   C3           CLR     C
+   \   00003C   13           RRC     A
+   \   00003D   FE           MOV     R6,A
+     54              }
+   \   00003E   18           DEC     R0
+   \   00003F   E8           MOV     A,R0
+   \   000040   70DD         JNZ     ??crc8_2
+   \   000042   80C5         SJMP    ??crc8_0
+     55            }
+     56            return crc;
+   \                     ??crc8_1:
+   \   000044   7F01         MOV     R7,#0x1
+   \   000046   02....       LJMP    ?BANKED_LEAVE_XDATA
+     57          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for CRCTable>`:
+   \   000000   0000         DW 0
+   \   000002   01CC         DW 52225
+   \   000004   01D8         DW 55297
+   \   000006   0014         DW 5120
+   \   000008   01F0         DW 61441
+   \   00000A   003C         DW 15360
+   \   00000C   0028         DW 10240
+   \   00000E   01E4         DW 58369
+   \   000010   01A0         DW 40961
+   \   000012   006C         DW 27648
+   \   000014   0078         DW 30720
+   \   000016   01B4         DW 46081
+   \   000018   0050         DW 20480
+   \   00001A   019C         DW 39937
+   \   00001C   0188         DW 34817
+   \   00001E   0044         DW 17408
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??crc8?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    crc8
+
+   Maximum stack usage in bytes:
+
+     Function ISTACK PSTACK XSTACK
+     -------- ------ ------ ------
+     crc8         0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     CRCTable                      32
+     crc8                          73
+     ?<Initializer for CRCTable>   32
+     ??crc8?relay                   6
+
+ 
+ 73 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+ 32 bytes in segment XDATA_I
+ 32 bytes in segment XDATA_ID
+ 
+ 111 bytes of CODE  memory
+  32 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,666 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         25/Jan/2015  17:03:40 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\weikong\Source\guu_timer.c         #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wCoord.cfg" (-DCPU32MHZ              #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\weikong\Source\guu_timer.c" -D ZTOOL_P1 -D  #
+#                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D          #
+#                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D     #
+#                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D   #
+#                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D              #
+#                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                  #
+#                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D       #
+#                          xPOWER_SAVING -lC "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Coordinator\List\" -lA    #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\Coordinator\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Coordinator\Obj\" -e      #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\Source\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\ZMain\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\" -I "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\cc2531\" -I      #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\usb\class_cdc\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\high_level\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\" -I "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\single_chip\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 #
+#                          a\Projects\zstack\Samples\GenericApp\CC2531\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\saddr\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\sdata\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\af\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\nwk\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sapi\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sec\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sys\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\zdo\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2531\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\weikong\Source\"    #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Coordinator\List #
+#                          \guu_timer.lst                                     #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Coordinator\Obj\ #
+#                          guu_timer.r51                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\guu_timer.c
+      1          /*
+      2          Timer中断 和函数 做到独立很难，是因为有些变量会根据需求，要extern进来
+      3          这样就变的复杂了
+      4          
+      5          */
+      6          #include "ZComDef.h"
+      7          #include "hal_drivers.h"
+      8          #include "OSAL.h"
+      9          #include "OSAL_Tasks.h"
+     10          #include "OSAL_Nv.h"
+     11          
+     12          //#include "OSAL_Custom.h"
+     13          
+     14          #if defined ( MT_TASK )
+     15            #include "MT.h"
+     16            #include "MT_TASK.h"
+     17          #endif
+     18          #include <stdio.h>
+     19          #include <stdlib.h>
+     20          #include <string.h>
+     21          
+     22          
+     23          #include "nwk.h"
+     24          #include "APS.h"
+     25          #include "ZDApp.h"
+     26          
+     27          #include "osal_nv.h"
+     28          #include "NLMEDE.h"
+     29          #include "AF.h"
+     30          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcb
+   \   unsigned char volatile __sfr T3CTL
+   \                     T3CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xda
+   \   unsigned char volatile __sfr T1CC0L
+   \                     T1CC0L:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdb
+   \   unsigned char volatile __sfr T1CC0H
+   \                     T1CC0H:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdc
+   \   unsigned char volatile __sfr T1CC1L
+   \                     T1CC1L:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdd
+   \   unsigned char volatile __sfr T1CC1H
+   \                     T1CC1H:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xde
+   \   unsigned char volatile __sfr T1CC2L
+   \                     T1CC2L:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdf
+   \   unsigned char volatile __sfr T1CC2H
+   \                     T1CC2H:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe4
+   \   unsigned char volatile __sfr T1CTL
+   \                     T1CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe6
+   \   unsigned char volatile __sfr T1CCTL1
+   \                     T1CCTL1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe7
+   \   unsigned char volatile __sfr T1CCTL2
+   \                     T1CCTL2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xeb
+   \   unsigned char volatile __sfr T4CTL
+   \                     T4CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+     31          #include "nwk_util.h"
+     32          #include "ZDProfile.h"
+     33          #include "ZDObject.h"
+     34          
+     35          #include "hal_adc.h"
+     36          #include "hal_key.h"
+     37          
+     38          #include "guu_common_def.h"
+     39          #include "serial.h"
+     40          #include "crc.h"
+     41          #include "base.h"
+     42          #include "guu_io.h"
+     43          #include "guu_timer.h"
+     44          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     45          void init_timer4_as_half_ms_counter(void)
+   \                     init_timer4_as_half_ms_counter:
+     46          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     47          
+     48              T4CTL &= ~0x10;             // Stop timer 4 (if it was running)
+   \   000000   53EBEF       ANL     0xeb,#0xef
+     49              T4CTL |= 0x04;              // Clear timer 4
+   \   000003   43EB04       ORL     0xeb,#0x4
+     50              T4CTL |= 0x08;             // enable Timer 4 overflow interrupts
+   \   000006   43EB08       ORL     0xeb,#0x8
+     51              T4CTL |= 0x00;              // Timer 4 guu_mode = free-running guu_mode,with overflowe interrupt
+   \   000009   85EBEB       MOV     0xeb,0xeb
+     52              T4CTL |= 0xc0; //  Tick frequency/64 这样，0.5ms一次，500us
+   \   00000C   43EBC0       ORL     0xeb,#0xc0
+     53              T4CTL |= 0x10; // START IT
+   \   00000F   43EB10       ORL     0xeb,#0x10
+     54              T4IE = 1;    
+   \   000012   D2BC         SETB    0xb8.4
+     55          }
+   \   000014   02....       LJMP    ?BRET
+   \   000017                REQUIRE T4CTL
+   \   000017                REQUIRE _A_IEN1
+     56          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     57          void init_timer3_as_second_counter(void)
+   \                     init_timer3_as_second_counter:
+     58          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     59              T3CTL &= ~0x10;             // Stop timer 3 (if it was running)
+   \   000000   53CBEF       ANL     0xcb,#0xef
+     60              T3CTL = 0; // 清空所有设置,此时分频是1
+   \   000003   75CB00       MOV     0xcb,#0x0
+     61              T3CTL |= 0x04;              // Clear timer 3
+   \   000006   43CB04       ORL     0xcb,#0x4
+     62              T3CTL |= 0x08;             // enable Timer 3 overflow interrupts
+   \   000009   43CB08       ORL     0xcb,#0x8
+     63              T3CTL |= 0x00;              // Timer 3 guu_mode = free-running guu_mode,with overflowe interrupt
+   \   00000C   85CBCB       MOV     0xcb,0xcb
+     64              T3CTL |= 224; //  Tick frequency/128
+   \   00000F   43CBE0       ORL     0xcb,#0xe0
+     65              T3IE = 1;
+   \   000012   D2BB         SETB    0xb8.3
+     66              T3CTL |= 0x10; // Start Timer
+   \   000014   43CB10       ORL     0xcb,#0x10
+     67                
+     68              
+     69          }
+   \   000017   02....       LJMP    ?BRET
+   \   00001A                REQUIRE T3CTL
+   \   00001A                REQUIRE _A_IEN1
+     70          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     71          void guu_init_timer1(void)
+   \                     guu_init_timer1:
+     72          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     73            //time1 init
+     74             T1CTL |=0x02;
+   \   000005   43E402       ORL     0xe4,#0x2
+     75             PERCFG |= 0x40; // move time1 to alt2 location
+   \   000008   43F140       ORL     0xf1,#0x40
+     76             T1CTL |=0x02; // module mode
+   \   00000B   43E402       ORL     0xe4,#0x2
+     77             T1CC0L=0xff;
+   \   00000E   75DAFF       MOV     0xda,#-0x1
+     78             T1CC0H=0xff;
+   \   000011   75DBFF       MOV     0xdb,#-0x1
+     79             
+     80             T1CCTL1 |= 0x1c;//比较模式，定时器T1，通道1 模式4
+   \   000014   43E61C       ORL     0xe6,#0x1c
+     81             T1CC1L = 0x00;//比较值 高电平时间
+   \   000017   75DC00       MOV     0xdc,#0x0
+     82             T1CC1H = 0x00;
+   \   00001A   75DD00       MOV     0xdd,#0x0
+     83          	 
+     84             T1CCTL2 |= 0x1c;//比较模式，定时器T1，通道1 模式4
+   \   00001D   43E71C       ORL     0xe7,#0x1c
+     85             T1CC2L = 0x00;//比较值 高电平时间
+   \   000020   75DE00       MOV     0xde,#0x0
+     86             T1CC2H = 0x00;
+   \   000023   75DF00       MOV     0xdf,#0x0
+     87          
+     88             T1CCTL3 |= 0x1c;//比较模式，定时器T1，通道1 模式4
+   \   000026   9062A3       MOV     DPTR,#0x62a3
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   441C         ORL     A,#0x1c
+   \   00002C   F0           MOVX    @DPTR,A
+     89             T1CC3L = 0x00;//比较值 高电平时间
+   \   00002D   9062AC       MOV     DPTR,#0x62ac
+   \   000030   E4           CLR     A
+   \   000031   F0           MOVX    @DPTR,A
+     90             T1CC3H = 0x00;
+   \   000032   A3           INC     DPTR
+   \   000033   F0           MOVX    @DPTR,A
+     91          
+     92             T1CCTL4 |= 0x1c;//比较模式，定时器T1，通道1 模式4
+   \   000034   9062A4       MOV     DPTR,#0x62a4
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   441C         ORL     A,#0x1c
+   \   00003A   F0           MOVX    @DPTR,A
+     93             T1CC4L = 0x00;//比较值 高电平时间
+   \   00003B   9062AE       MOV     DPTR,#0x62ae
+   \   00003E   E4           CLR     A
+   \   00003F   F0           MOVX    @DPTR,A
+     94             T1CC4H = 0x00;
+   \   000040   A3           INC     DPTR
+   \   000041   F0           MOVX    @DPTR,A
+     95          
+     96          //   RGBA->R=0; RGBA->G=0; RGBA->B=0;RGBA->A=0;
+     97          
+     98          	/*
+     99            P0DIR |= BV(6);
+    100          	P0DIR |= BV(7);
+    101          	P1DIR |= 0x03;
+    102            P1SEL |= 0x03; //p1_0,p1_1 用来当timer1的通道 
+    103            P0SEL |= 0xc0; //p0_6,p0_7,用来当Timer1的通道  
+    104          	//此处不能在初始化时进行端口的配置 ,特别是P1_0,会影响到cc2530/1的USB初始化
+    105          	*/
+    106          	//从Flash中读取RGBA四个值,再赋于Timer1 4个通道 
+    107          	guu_osal_nv_read(PWM_ADDR,0,sizeof(RGBA_t), (uint8*)RGBA);
+   \   000042                ; Setup parameters for call to function guu_osal_nv_read
+   \   000042   90....       MOV     DPTR,#RGBA
+   \   000045   12....       LCALL   ?PUSH_XSTACK8_X_TWO
+   \   000048   75..04       MOV     ?V0 + 0,#0x4
+   \   00004B   75..00       MOV     ?V0 + 1,#0x0
+   \   00004E   78..         MOV     R0,#?V0 + 0
+   \   000050   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000053   7C00         MOV     R4,#0x0
+   \   000055   7D00         MOV     R5,#0x0
+   \   000057   7A02         MOV     R2,#0x2
+   \   000059   7B04         MOV     R3,#0x4
+   \   00005B   12....       LCALL   ??guu_osal_nv_read?relay
+   \   00005E   7404         MOV     A,#0x4
+   \   000060   12....       LCALL   ?DEALLOC_XSTACK8
+    108          
+    109          	set_timer1_ch(1,RGBA->R);
+   \   000063                ; Setup parameters for call to function set_timer1_ch
+   \   000063   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   FA           MOV     R2,A
+   \   000068   7901         MOV     R1,#0x1
+   \   00006A   12....       LCALL   ??set_timer1_ch?relay
+    110          	set_timer1_ch(2,RGBA->G);
+   \   00006D                ; Setup parameters for call to function set_timer1_ch
+   \   00006D   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000070   A3           INC     DPTR
+   \   000071   E0           MOVX    A,@DPTR
+   \   000072   FA           MOV     R2,A
+   \   000073   7902         MOV     R1,#0x2
+   \   000075   12....       LCALL   ?Subroutine0 & 0xFFFF
+    111          	set_timer1_ch(3,RGBA->B);
+   \                     ??CrossCallReturnLabel_0:
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   FA           MOV     R2,A
+   \   00007A   7903         MOV     R1,#0x3
+   \   00007C   12....       LCALL   ?Subroutine0 & 0xFFFF
+    112          	set_timer1_ch(4,RGBA->A);
+   \                     ??CrossCallReturnLabel_1:
+   \   00007F   A3           INC     DPTR
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   FA           MOV     R2,A
+   \   000082   7904         MOV     R1,#0x4
+   \   000084   12....       LCALL   ??set_timer1_ch?relay
+    113          
+    114          	
+    115          }
+   \   000087   7F02         MOV     R7,#0x2
+   \   000089   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00008C                REQUIRE T1CTL
+   \   00008C                REQUIRE PERCFG
+   \   00008C                REQUIRE T1CC0L
+   \   00008C                REQUIRE T1CC0H
+   \   00008C                REQUIRE T1CCTL1
+   \   00008C                REQUIRE T1CC1L
+   \   00008C                REQUIRE T1CC1H
+   \   00008C                REQUIRE T1CCTL2
+   \   00008C                REQUIRE T1CC2L
+   \   00008C                REQUIRE T1CC2H
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   90....       MOV     DPTR,#RGBA
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F8           MOV     R0,A
+   \   000005   A3           INC     DPTR
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F583         MOV     DPH,A
+   \   000009   8882         MOV     DPL,R0
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL   ??set_timer1_ch?relay
+   \   000003                ; Setup parameters for call to function set_timer1_ch
+   \   000003                ; Setup parameters for call to function set_timer1_ch
+   \   000003   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000006   A3           INC     DPTR
+   \   000007   A3           INC     DPTR
+   \   000008   22           RET
+    116          
+    117          
+    118          #pragma vector=T3_VECTOR
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    119          __interrupt static void T3_IRQ(void)
+   \                     T3_IRQ:
+    120          {
+   \   000000                ; Saved register size: 1
+   \   000000                ; Auto size: 0
+    121            
+    122          }
+   \   000000   32           RETI
+    123          
+    124          
+    125          #pragma vector=T4_VECTOR
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    126          __interrupt static void T4_IRQ(void)
+   \                     T4_IRQ:
+    127          {
+   \   000000                ; Saved register size: 1
+   \   000000                ; Auto size: 0
+    128            
+    129            /*
+    130            guu_t4_counter++;
+    131            if( guu_t4_counter >0 && guu_t4_counter < 16)
+    132            {
+    133               if(RESET_NETWORK == 0)
+    134               {
+    135                 if( _NIB.nwkDevAddress != 0x0000 &&  _NIB.nwkDevAddress != INVALID_NODE_ADDR )
+    136                 {
+    137                    send_self_address_to_coordi(1);
+    138                 }
+    139               }
+    140            }
+    141            else if(guu_t4_counter > 6644 )
+    142            {
+    143              //check p0_5
+    144              if(RESET_NETWORK == 0 &&  _NIB.nwkDevAddress != 0x0000 )// 按下 清除网络的 按纽
+    145              {
+    146                 _NIB.nwkDevAddress=0xfffe;
+    147                 NLME_UpdateNV(0x01);
+    148                if(_NIB.nwkPanId == 0xfffe) //no network
+    149                {
+    150                  guu_sa =_NIB.nwkLogicalChannel;
+    151                  guu_sa++;
+    152                  if( guu_sa > 0x1a)
+    153                  {
+    154                    guu_sa = 0x0b;
+    155                  }
+    156                  set_channel( (uint8)guu_sa);        
+    157                  set_router();
+    158                }else
+    159                {
+    160                  guu_sa =_NIB.nwkLogicalChannel;
+    161                  guu_sa++;
+    162                  if( guu_sa > 0x1a)
+    163                  {
+    164                    guu_sa = 0x0b;
+    165                  }
+    166                  set_channel( (uint8)guu_sa);
+    167                  set_panid( 0xffff);
+    168                  if(_NIB.nwkPanId == 0xffff)
+    169                  {
+    170                    zgWriteStartupOptions (ZG_STARTUP_SET, ZCD_STARTOPT_DEFAULT_NETWORK_STATE);
+    171                    SystemReset();
+    172                  }
+    173                }
+    174                guu_t4_counter = 0;
+    175                usart_debug("reset",5);
+    176              }
+    177              
+    178            }
+    179            
+    180            
+    181          #ifdef USE_PM25
+    182            
+    183            if(guu_pm25_30_counter != 0xffff ) // 在命令的时候，reset guu_pm25_30_counter 为0 ,开始计数
+    184            {
+    185              guu_pm25_30_counter ++;
+    186              
+    187              //if(PM2_PORT)
+    188              //{
+    189              //  _guu_pm25_hi++;
+    190              //}
+    191              //else 
+    192              
+    193              if(!PM2_PORT)
+    194              {
+    195                guu_pm25_low++;
+    196              }
+    197            
+    198            if(guu_pm25_30_counter >= PM_COUNTER_MAX)
+    199              { 
+    200                send_pm25_data();
+    201              }
+    202                
+    203            }
+    204          #endif
+    205            
+    206             if(guu_t4_counter > 65534) 
+    207             {
+    208               guu_t4_counter = 0;
+    209               
+    210             }
+    211            */
+    212          }
+   \   000000   32           RETI
+
+   \                                 In  segment INTVEC, offset 0x5b, root
+   \   00005B   02....       LJMP       (T3_IRQ)
+
+   \                                 In  segment INTVEC, offset 0x63, root
+   \   000063   02....       LJMP       (T4_IRQ)
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??init_timer4_as_half_ms_counter?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    init_timer4_as_half_ms_counter
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??init_timer3_as_second_counter?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    init_timer3_as_second_counter
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_init_timer1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_init_timer1
+    213          
+    214          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     T3_IRQ                             1      0      0
+     T4_IRQ                             1      0      0
+     guu_init_timer1                    0      0     14
+       -> guu_osal_nv_read              0      0     28
+       -> set_timer1_ch                 0      0     20
+       -> set_timer1_ch                 0      0     20
+       -> set_timer1_ch                 0      0     20
+       -> set_timer1_ch                 0      0     20
+     init_timer3_as_second_counter      0      0      0
+     init_timer4_as_half_ms_counter     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     _A_IEN1                                   1
+     T3CTL                                     1
+     T1CC0L                                    1
+     T1CC0H                                    1
+     T1CC1L                                    1
+     T1CC1H                                    1
+     T1CC2L                                    1
+     T1CC2H                                    1
+     T1CTL                                     1
+     T1CCTL1                                   1
+     T1CCTL2                                   1
+     T4CTL                                     1
+     PERCFG                                    1
+     init_timer4_as_half_ms_counter           23
+     init_timer3_as_second_counter            26
+     guu_init_timer1                         140
+     ?Subroutine1                              4
+     ?Subroutine2                             12
+     ?Subroutine0                              9
+     T3_IRQ                                    1
+     T4_IRQ                                    1
+     ??T3_IRQ??INTVEC 91                       3
+     ??T4_IRQ??INTVEC 99                       3
+     ??init_timer4_as_half_ms_counter?relay    6
+     ??init_timer3_as_second_counter?relay     6
+     ??guu_init_timer1?relay                   6
+
+ 
+ 214 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   6 bytes in segment INTVEC
+   2 bytes in segment NEAR_CODE
+  13 bytes in segment SFR_AN
+ 
+ 234 bytes of CODE memory (+  6 bytes shared)
+   0 bytes of DATA memory (+ 13 bytes shared)
+
+Errors: none
+Warnings: none

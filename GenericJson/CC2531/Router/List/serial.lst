@@ -1,0 +1,486 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         25/Jan/2015  17:06:23 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\weikong\Source\serial.c            #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\Too #
+#                          ls\CC2530DB\f8wRouter.cfg" (-DCPU32MHZ             #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0              #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\weikong\Source\serial.c" -D ZTOOL_P1 -D     #
+#                          MT_TASK -D MT_AF_FUNC -D MT_AF_CB_FUNC -D          #
+#                          MT_APP_FUNC -D MT_DEBUG_FUNC -D MT_NWK_FUNC -D     #
+#                          MT_NWK_CB_FUNC -D MT_SYS_FUNC -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D MT_UTIL_FUNC -D MT_ZDO_CB_FUNC -D   #
+#                          MT_ZDO_MGMT -D LCD_SUPPORTED=FALSE -D              #
+#                          HAL_LCD=FALSE -D HAL_LED=FALSE -D                  #
+#                          GUU_HAL_LED=TRUE -D NV_INIT -D NV_RESTORE -D       #
+#                          xPOWER_SAVING -lC "C:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\List\" -lA         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\Router\List\"   #
+#                          --diag_suppress Pe001,Pa010 -o "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\Router\Obj\" -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\Source\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\ZMain\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\GenericApp\CC2531\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\" -I "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \hal\target\CC2530USB\usb\library\cc2531\" -I      #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\GenericApp\CC2531\..\..\..\..\..\ #
+#                          Components\hal\target\CC2530USB\usb\class_cdc\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\GenericApp\CC2531\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\high_level\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\" -I "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mac\low_level\srf04\single_chip\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \mt\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 #
+#                          a\Projects\zstack\Samples\GenericApp\CC2531\..\..\ #
+#                          ..\..\..\Components\osal\include\" -I "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\saddr\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \services\sdata\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\af\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\nwk\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sapi\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sec\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\sys\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \stack\zdo\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\..\..\..\Components #
+#                          \zmac\" -I "C:\Texas Instruments\ZStack-CC2530-2.5 #
+#                          .1a\Projects\zstack\Samples\GenericApp\CC2531\..\. #
+#                          .\..\..\..\Components\zmac\f8w\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\GenericApp\CC2531\..\..\weikong\Source\"    #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\List\seri #
+#                          al.lst                                             #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\GenericApp\CC2531\Router\Obj\seria #
+#                          l.r51                                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\weikong\Source\serial.c
+      1          #include <iocc2530.h>
+      2          #include <stdio.h>
+      3          #include <stdlib.h>
+      4          #include <string.h>
+      5          
+      6          #include "OSAL.h"
+      7          #include "OSAL_Nv.h"
+      8          
+      9          #include "AF.h"
+     10          #include "ZDApp.h"
+     11          #include "ZDObject.h"
+     12          #include "ZDProfile.h"
+     13          #include "ZDSecMgr.h"
+     14          
+     15          #if !defined( WIN32 )
+     16            #include "OnBoard.h"
+     17          #endif
+     18          
+     19          /* HAL */
+     20          #include "hal_adc.h"
+     21          #include "hal_mcu.h"
+     22          #include "hal_lcd.h"
+     23          #include "hal_led.h"
+     24          #include "hal_key.h"
+     25          #include "hal_uart.h"
+     26          #include "hal_drivers.h"
+     27          
+     28          #include "serial.h"
+     29          #include "base.h"
+     30          
+     31          extern uint8 guu_sender;
+     32          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void guu_usart2(uint8*d, uint8 len)
+   \                     guu_usart2:
+     34          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     35            HalUARTWrite( SER_PORT2,  d, len);
+   \   000006                ; Setup parameters for call to function HalUARTWrite
+   \   000006   FC           MOV     R4,A
+   \   000007   7D00         MOV     R5,#0x0
+   \   000009   7901         MOV     R1,#0x1
+   \   00000B   12....       LCALL   ??HalUARTWrite?relay
+     36          }
+   \   00000E                REQUIRE ?Subroutine0
+   \   00000E                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     37          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     38          uint8 guu_usart(uint8*d, uint8 len)//uint8的类型表示了，他一次最大发送255个字节
+   \                     guu_usart:
+     39          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+     40            //if( _NIB.nwkDevAddress != 0x0000 )
+     41          		if(d!=NULL)
+   \   000007   EA           MOV     A,R2
+   \   000008   4B           ORL     A,R3
+   \   000009   600F         JZ      ??guu_usart_0
+     42          		{
+     43              	return HalUARTWrite(SER_PORT, d, len );
+   \   00000B                ; Setup parameters for call to function HalUARTWrite
+   \   00000B   8E..         MOV     ?V0 + 0,R6
+   \   00000D   AC..         MOV     R4,?V0 + 0
+   \   00000F   7D00         MOV     R5,#0x0
+   \   000011   7900         MOV     R1,#0x0
+   \   000013   12....       LCALL   ??HalUARTWrite?relay
+   \   000016   EA           MOV     A,R2
+   \   000017   F9           MOV     R1,A
+   \   000018   8002         SJMP    ??guu_usart_1
+     44          		}else
+     45          		{
+     46          			return ZFailure;
+   \                     ??guu_usart_0:
+   \   00001A   7901         MOV     R1,#0x1
+     47          		}
+   \                     ??guu_usart_1:
+   \   00001C   80..         SJMP    ?Subroutine0
+     48          }
+     49          
+     50          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     51          void guu_serial_callback(uint8 port, uint8 event)
+   \                     guu_serial_callback:
+     52          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 12
+   \   000004   74F4         MOV     A,#-0xc
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+     53          	//弃用了，使用MT回调函数了
+     54            uint8 guu_serial_buff[12];
+     55            uint8 readBytes = 0;
+     56          //  uint8 sl;
+     57          //  guu_serial_buff = osal_mem_alloc(64*sizeof(uint8));
+     58            //serial_data = osal_mem_alloc(128);
+     59            
+     60            readBytes = HalUARTRead(SER_PORT, guu_serial_buff, 12);
+     61            if (readBytes > 0)
+   \   000009                ; Setup parameters for call to function HalUARTRead
+   \   000009   7C0C         MOV     R4,#0xc
+   \   00000B   7D00         MOV     R5,#0x0
+   \   00000D   85..82       MOV     DPL,?XSP + 0
+   \   000010   85..83       MOV     DPH,?XSP + 1
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+   \   000017   7900         MOV     R1,#0x0
+   \   000019   12....       LCALL   ??HalUARTRead?relay
+   \   00001C   EA           MOV     A,R2
+   \   00001D   6013         JZ      ??guu_serial_callback_0
+     62            {
+     63              guu_sender = 0;
+   \   00001F   90....       MOV     DPTR,#guu_sender
+   \   000022   E4           CLR     A
+   \   000023   F0           MOVX    @DPTR,A
+     64              if(guu_serial_buff[0] == 0x02)
+   \   000024   85..82       MOV     DPL,?XSP + 0
+   \   000027   85..83       MOV     DPH,?XSP + 1
+   \   00002A   E0           MOVX    A,@DPTR
+   \   00002B   6402         XRL     A,#0x2
+   \   00002D   7003         JNZ     ??guu_serial_callback_0
+     65              {
+     66                send_baseinfo();
+   \   00002F                ; Setup parameters for call to function send_baseinfo
+   \   00002F   12....       LCALL   ??send_baseinfo?relay
+     67              }
+     68              
+     69              //usart_debug(guu_serial_buff,readBytes);
+     70              //parse_procotol( guu_serial_buff, readBytes, _NIB.nwkDevAddress, 0x00);
+     71              /*
+     72              sl = guu_serial_data_length;
+     73              if( (readBytes + sl) <= SER_DATA_LEN)
+     74              {
+     75                if(sl == 0)
+     76                {
+     77                  memcpy(serial_data, guu_serial_buff, readBytes);
+     78                }else
+     79                {
+     80                  memcpy(&serial_data[sl],guu_serial_buff, readBytes);
+     81                }
+     82                guu_serial_data_length = sl+readBytes;
+     83                parse_modbus( serial_data, guu_serial_data_length, _NIB.nwkDevAddress, FROM_RS232);
+     84              }else // pool overflowed
+     85              {
+     86                  memcpy(serial_data, guu_serial_buff, readBytes);
+     87                  guu_serial_data_length = readBytes;
+     88                  parse_modbus( serial_data, readBytes, _NIB.nwkDevAddress, FROM_RS232);
+     89              }
+     90              */
+     91            }
+     92          
+     93            //guu_osal_mem_free(guu_serial_buff); 
+     94            //guu_osal_mem_free(serial_data);
+     95            return;
+   \                     ??guu_serial_callback_0:
+   \   000032   740C         MOV     A,#0xc
+   \   000034                REQUIRE ?Subroutine1
+   \   000034                ; // Fall through to label ?Subroutine1
+     96          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003   D083         POP     DPH
+   \   000005   D082         POP     DPL
+   \   000007   02....       LJMP    ?BRET
+     97          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     98          void guu_serial_init(void )
+   \                     guu_serial_init:
+     99          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 29
+   \   000004   74E3         MOV     A,#-0x1d
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    100            halUARTCfg_t uartConfig;
+    101          
+    102            uartConfig.configured           = TRUE;                                                   // 2x30 don't care - see uart driver.
+   \   000009   85..82       MOV     DPL,?XSP + 0
+   \   00000C   85..83       MOV     DPH,?XSP + 1
+   \   00000F   7401         MOV     A,#0x1
+   \   000011   F0           MOVX    @DPTR,A
+    103            uartConfig.baudRate             = HAL_UART_BR_38400;                       //38400
+   \   000012   12....       LCALL   ?XSTACK_DISP0_8
+   \   000015   7402         MOV     A,#0x2
+   \   000017   F0           MOVX    @DPTR,A
+    104            uartConfig.flowControl          = FALSE;
+   \   000018   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001B   E4           CLR     A
+   \   00001C   F0           MOVX    @DPTR,A
+    105            uartConfig.flowControlThreshold = 64;        // 64.
+   \   00001D   7403         MOV     A,#0x3
+   \   00001F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000022   7440         MOV     A,#0x40
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   E4           CLR     A
+   \   000027   F0           MOVX    @DPTR,A
+    106            uartConfig.rx.maxBufSize        = 128;                  // 128
+   \   000028   740A         MOV     A,#0xa
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   7480         MOV     A,#-0x80
+   \   00002F   F0           MOVX    @DPTR,A
+   \   000030   A3           INC     DPTR
+   \   000031   E4           CLR     A
+   \   000032   F0           MOVX    @DPTR,A
+    107            uartConfig.tx.maxBufSize        = 128;                  // 128
+   \   000033   7412         MOV     A,#0x12
+   \   000035   12....       LCALL   ?XSTACK_DISP0_8
+   \   000038   7480         MOV     A,#-0x80
+   \   00003A   F0           MOVX    @DPTR,A
+   \   00003B   A3           INC     DPTR
+   \   00003C   E4           CLR     A
+   \   00003D   F0           MOVX    @DPTR,A
+    108            uartConfig.idleTimeout          = 12;                      // 6
+   \   00003E   7405         MOV     A,#0x5
+   \   000040   12....       LCALL   ?XSTACK_DISP0_8
+   \   000043   740C         MOV     A,#0xc
+   \   000045   F0           MOVX    @DPTR,A
+    109            uartConfig.intEnable            = TRUE;                                                 
+   \   000046   7416         MOV     A,#0x16
+   \   000048   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004B   7401         MOV     A,#0x1
+   \   00004D   F0           MOVX    @DPTR,A
+    110            uartConfig.callBackFunc         = guu_serial_callback;                   // Call back function
+   \   00004E   741B         MOV     A,#0x1b
+   \   000050   12....       LCALL   ?XSTACK_DISP0_8
+   \   000053   74..         MOV     A,#??guu_serial_callback?relay & 0xff
+   \   000055   F0           MOVX    @DPTR,A
+   \   000056   A3           INC     DPTR
+   \   000057   74..         MOV     A,#(??guu_serial_callback?relay >> 8) & 0xff
+   \   000059   F0           MOVX    @DPTR,A
+    111            
+    112            HalUARTOpen (SER_PORT, &uartConfig);
+   \   00005A                ; Setup parameters for call to function HalUARTOpen
+   \   00005A   85..82       MOV     DPL,?XSP + 0
+   \   00005D   85..83       MOV     DPH,?XSP + 1
+   \   000060   AA82         MOV     R2,DPL
+   \   000062   AB83         MOV     R3,DPH
+   \   000064   7900         MOV     R1,#0x0
+   \   000066   12....       LCALL   ??HalUARTOpen?relay
+    113          
+    114            /*
+    115            PERCFG |= BV(1); // uart1 alt 2 location
+    116            
+    117            uartConfig.configured           = TRUE;                                                   // 2x30 don't care - see uart driver.
+    118            uartConfig.baudRate             = guu_com2_speed;                       //38400
+    119            uartConfig.flowControl          = FALSE;
+    120            uartConfig.flowControlThreshold = 64;        // 64.
+    121            uartConfig.rx.maxBufSize        = 512;                  // 128
+    122            uartConfig.tx.maxBufSize        = 512;                  // 128
+    123            uartConfig.idleTimeout          = 255;                      // 6
+    124            uartConfig.intEnable            = TRUE;                                                 
+    125            uartConfig.callBackFunc         = Serial_callBack2;                   // Call back function
+    126            
+    127            HalUARTOpen (SER_PORT2, &uartConfig);
+    128            */
+    129            
+    130          }
+   \   000069   741D         MOV     A,#0x1d
+   \   00006B   80..         SJMP    ?Subroutine1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_usart2?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_usart2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_usart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_usart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_serial_callback?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_serial_callback
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??guu_serial_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    guu_serial_init
+
+   Maximum stack usage in bytes:
+
+     Function            ISTACK PSTACK XSTACK
+     --------            ------ ------ ------
+     guu_serial_callback     2      0     12
+       -> HalUARTRead        4      0     24
+       -> send_baseinfo      4      0     24
+     guu_serial_init         2      0     29
+       -> HalUARTOpen        4      0     58
+     guu_usart               0      0     10
+       -> HalUARTWrite       0      0     20
+     guu_usart2              0      0     10
+       -> HalUARTWrite       0      0     20
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     guu_usart2                    14
+     ?Subroutine0                   5
+     guu_usart                     30
+     guu_serial_callback           52
+     ?Subroutine1                  10
+     guu_serial_init              109
+     ??guu_usart2?relay             6
+     ??guu_usart?relay              6
+     ??guu_serial_callback?relay    6
+     ??guu_serial_init?relay        6
+
+ 
+ 220 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+ 
+ 244 bytes of CODE memory
+
+Errors: none
+Warnings: none
