@@ -20,6 +20,7 @@ My zigbee code for smart auto home device
 
 + Two uarts enabled
 
++ IDE: IAR 8.10 
 
 
 
